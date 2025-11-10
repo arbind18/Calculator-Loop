@@ -1,0 +1,2421 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Loop - 300+ Free Online Calculators | Financial, Health, Math, Date & More</title>
+    <meta name="description" content="Calculator Loop offers 300+ free online calculators including EMI, SIP, GST, BMI, Age, Percentage, Loan, Investment, Tax calculators and more. Fast, accurate, and easy-to-use calculator tools for everyone.">
+    <meta name="keywords" content="online calculator, free calculator, EMI calculator, SIP calculator, GST calculator, BMI calculator, age calculator, percentage calculator, loan calculator, investment calculator, tax calculator, mortgage calculator, compound interest calculator, calorie calculator, retirement calculator, unit converter, math calculator, financial calculator, health calculator">
+    <meta name="author" content="Calculator Loop">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculatorloop.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Calculator Loop">
+    <meta property="og:title" content="Calculator Loop - 300+ Free Online Calculators">
+    <meta property="og:description" content="Free online calculators for financial planning, health metrics, math calculations, date-time conversions, and more. Easy and accurate calculator tools.">
+    <meta property="og:url" content="https://calculatorloop.com/">
+    <meta property="og:image" content="https://calculatorloop.com/images/calculator-loop-og.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@calculatorloop">
+    <meta name="twitter:title" content="Calculator Loop - 300+ Free Online Calculators">
+    <meta name="twitter:description" content="Free online calculators for EMI, SIP, BMI, Tax, Investment, and 300+ more tools.">
+    <meta name="twitter:image" content="https://calculatorloop.com/images/calculator-loop-twitter.jpg">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Calculator Loop",
+      "url": "https://calculatorloop.com/",
+      "description": "300+ Free Online Calculator Tools",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://calculatorloop.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <style>
+  /* Calculator Loop - Modern Calculator UI Styles */
+
+        /* CSS Custom Properties */
+        :root {
+          /* Colors - Light Mode */
+          --bg-primary: #FFFFFF;
+          --bg-secondary: #F8FAFC;
+          --bg-tertiary: #F1F5F9;
+          --text-primary: #1A1F3A;
+          --text-secondary: #64748B;
+          --text-muted: #94A3B8;
+          
+          /* Accent Colors */
+          --accent-blue: #00D4FF;
+          --accent-purple: #8B5CF6;
+          --accent-green: #00FF88;
+          --accent-pink: #FF006E;
+          --accent-cyan: #22D3EE;
+          
+          /* Gradients */
+          --gradient-ai: linear-gradient(135deg, #00D4FF 0%, #8B5CF6 100%);
+          --gradient-neon: linear-gradient(135deg, #00FF88 0%, #22D3EE 100%);
+          --gradient-dark: linear-gradient(135deg, #0A0E27 0%, #1A1F3A 100%);
+          
+          /* Shadows */
+          --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+          --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+          --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+          --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.2);
+          
+          /* Glassmorphism */
+          --glass-bg: rgba(255, 255, 255, 0.1);
+          --glass-border: rgba(255, 255, 255, 0.2);
+          --glass-blur: blur(20px);
+          
+          /* Spacing */
+          --space-xs: 4px;
+          --space-sm: 8px;
+          --space-md: 16px;
+          --space-lg: 24px;
+          --space-xl: 32px;
+          --space-2xl: 48px;
+          --space-3xl: 64px;
+          
+          /* Typography */
+          --font-primary: 'Poppins', sans-serif;
+          --font-secondary: 'Inter', sans-serif;
+          --font-accent: 'Manrope', sans-serif;
+          
+          /* Transitions */
+          --transition-fast: 200ms ease-in-out;
+          --transition-normal: 300ms ease-in-out;
+          --transition-slow: 500ms ease-in-out;
+        }
+
+        /* Dark Mode */
+        [data-theme="dark"] {
+          --bg-primary: #0A0E27;
+          --bg-secondary: #1A1F3A;
+          --bg-tertiary: #252B4A;
+          --text-primary: #FFFFFF;
+          --text-secondary: #94A3B8;
+          --text-muted: #64748B;
+          
+          --glass-bg: rgba(0, 0, 0, 0.2);
+          --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Reset and Base Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+          font-family: var(--font-primary);
+          background: var(--bg-primary);
+          color: var(--text-primary);
+          line-height: 1.6;
+          transition: background-color var(--transition-normal), color var(--transition-normal);
+          overflow-x: hidden;
+        }
+
+        /* Utility Classes */
+        .gradient-text { background: var(--gradient-ai); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .glass-effect { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); }
+
+        /* Navigation */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: var(--space-md) 0; background: var(--glass-bg); backdrop-filter: var(--glass-blur); border-bottom: 1px solid var(--glass-border); transition: all var(--transition-normal); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg); display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { display: flex; flex-direction: column; align-items: flex-start; }
+        .logo-text { font-family: var(--font-accent); font-size: 2rem; font-weight: 800; background: var(--gradient-ai); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 0; }
+        .logo-tagline { font-family: var(--font-secondary); font-size: 0.75rem; color: var(--text-secondary); margin-top: -4px; }
+        .nav-menu { display: flex; gap: var(--space-xl); }
+        .nav-link { font-family: var(--font-secondary); font-weight: 500; color: var(--text-secondary); text-decoration: none; padding: var(--space-sm) var(--space-md); border-radius: 8px; transition: all var(--transition-fast); position: relative; }
+        .nav-link:hover, .nav-link.active { color: var(--accent-blue); background: var(--glass-bg); }
+        .nav-controls { display: flex; align-items: center; gap: var(--space-md); flex-shrink: 0; }
+        .theme-toggle { width: 44px; height: 44px; border: none; border-radius: 12px; background: var(--glass-bg); color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all var(--transition-fast); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); flex-shrink: 0; }
+        .theme-toggle:hover { color: var(--accent-blue); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .login-btn { background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid var(--glass-border); color: var(--text-primary); padding: 8px 12px; border-radius: 10px; font-family: var(--font-secondary); font-weight: 700; cursor: pointer; transition: all var(--transition-fast); display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; flex-shrink: 0; }
+    .login-btn:hover { transform: translateY(-2px); color: var(--accent-blue); box-shadow: var(--shadow-sm); }
+        .mobile-menu-toggle { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: var(--space-sm); flex-shrink: 0; }
+        .mobile-menu-toggle span { width: 24px; height: 2px; background: var(--text-primary); transition: all var(--transition-fast); }
+
+        /* Navigation: Categories dropdown */
+        .nav-categories { position: relative; display: flex; align-items: center; }
+        .nav-categories-btn { background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-secondary); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-family: var(--font-secondary); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: all var(--transition-fast); }
+        .nav-categories-btn:hover { transform: translateY(-2px); color: var(--accent-blue); }
+        .category-badge { background: var(--accent-pink); color: white; font-size: 0.75rem; padding: 2px 8px; border-radius: 999px; margin-left: 6px; font-weight: 700; }
+        .nav-category-dropdown { position: absolute; top: calc(100% + 8px); left: 0; min-width: 260px; max-height: 450px; overflow-y: auto; background: var(--bg-primary); border: 1px solid var(--glass-border); border-radius: 12px; box-shadow: var(--shadow-lg); padding: 8px; display: none; flex-direction: column; gap: 6px; z-index: 1100; }
+        .nav-category-dropdown.open { display: flex; }
+        .nav-category-dropdown::-webkit-scrollbar { width: 6px; }
+        .nav-category-dropdown::-webkit-scrollbar-track { background: var(--bg-secondary); border-radius: 3px; }
+        .nav-category-dropdown::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 3px; }
+        .nav-category-dropdown::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
+        .nav-category-dropdown .dropdown-item { display: flex; align-items: center; gap: 10px; padding: 8px 10px; color: var(--text-primary); text-decoration: none; border-radius: 8px; transition: background-color var(--transition-fast), transform var(--transition-fast); }
+        .nav-category-dropdown .dropdown-item:hover { background: var(--glass-bg); transform: translateX(4px); color: var(--accent-blue); }
+        .nav-category-dropdown .dropdown-item i { color: var(--accent-blue); width: 20px; text-align: center; }
+
+        /* Floating Search */
+        .floating-search { position: fixed; top: 120px; left: 50%; transform: translateX(-50%); z-index: 999; width: 100%; max-width: 600px; padding: 0 var(--space-lg); }
+        .search-container { position: relative; background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-md); display: flex; align-items: center; gap: var(--space-md); box-shadow: var(--shadow-lg); transition: all var(--transition-normal); }
+        .search-container:focus-within { transform: scale(1.02); box-shadow: var(--shadow-xl); border-color: var(--accent-blue); }
+        .search-icon { color: var(--text-secondary); font-size: 1.25rem; }
+        .search-input { flex: 1; border: none; background: none; font-family: var(--font-secondary); font-size: 1rem; color: var(--text-primary); outline: none; }
+        .search-input::placeholder { color: var(--text-muted); }
+        .search-action {
+            background: var(--gradient-ai);
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 8px;
+            transition: all var(--transition-fast);
+            margin-right: var(--space-sm);
+        }
+        .search-action:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        .search-clear { 
+            background: none; 
+            border: none; 
+            color: var(--text-secondary); 
+            cursor: pointer; 
+            padding: var(--space-sm); 
+            border-radius: 8px; 
+            transition: all var(--transition-fast); 
+            opacity: 0; 
+            visibility: hidden; 
+        }
+        .search-clear.visible { opacity: 1; visibility: visible; }
+        .search-clear:hover { color: var(--accent-pink); background: var(--glass-bg); }
+        .search-suggestions { position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-primary); border: 1px solid var(--glass-border); border-radius: 12px; margin-top: var(--space-sm); max-height: 300px; overflow-y: auto; box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all var(--transition-fast); }
+        .search-suggestions.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        /* Main Content & Sections */
+        .main-content { margin-top: 100px; }
+        .hero { padding: var(--space-3xl) 0; background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(139,92,246,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); opacity: 0.5; }
+        .hero-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg); display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; position: relative; z-index: 1; }
+        .hero-content { display: flex; flex-direction: column; gap: var(--space-xl); }
+        .hero-title { font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin: 0; }
+        .hero-description { font-size: 1.25rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+        .hero-cta-button { background: var(--gradient-ai); color: white; border: none; padding: var(--space-md) var(--space-xl); border-radius: 12px; font-family: var(--font-secondary); font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: var(--space-sm); transition: all var(--transition-fast); margin-top: var(--space-md); text-decoration: none; align-self: flex-start; }
+        .hero-cta-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .hero-visual { position: relative; height: 400px; display: flex; align-items: center; justify-content: center; }
+        .floating-cards { position: relative; width: 100%; height: 100%; }
+        .feature-card { position: absolute; background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: 16px; padding: var(--space-lg); display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); box-shadow: var(--shadow-lg); transition: all var(--transition-normal); animation: float 6s ease-in-out infinite; }
+        .feature-card i { font-size: 2rem; background: var(--gradient-ai); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .feature-card span { font-family: var(--font-secondary); font-weight: 600; color: var(--text-primary); font-size: 0.9rem; text-align: center; white-space: nowrap; }
+        .card-1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .card-2 { top: 50%; right: 20%; animation-delay: 2s; }
+        .card-3 { bottom: 20%; left: 30%; animation-delay: 4s; }
+        @keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 33% { transform: translateY(-20px) rotate(1deg); } 66% { transform: translateY(10px) rotate(-1deg); } }
+        
+        /* Hide feature cards on mobile */
+        @media (max-width: 768px) {
+          .floating-cards, .feature-card { display: none; }
+        }
+        .tools-section { padding: var(--space-3xl) 0; background: var(--bg-secondary); }
+        .tools-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg); }
+        .section-header { text-align: center; margin-bottom: var(--space-3xl); }
+        .section-title { font-size: 3rem; font-weight: 700; margin: 0 0 var(--space-md) 0; }
+        .section-description { font-size: 1.25rem; color: var(--text-secondary); margin: 0; }
+
+        /* Category Tabs */
+        .category-tabs { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-2xl); justify-content: center; }
+  .tab-button { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: 12px; padding: var(--space-md) var(--space-lg); font-family: var(--font-secondary); font-weight: 700; color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; gap: var(--space-sm); transition: all var(--transition-fast); white-space: nowrap; }
+        .tab-button:hover { color: var(--accent-blue); border-color: var(--accent-blue); transform: translateY(-2px); }
+        .tab-button.active { background: var(--gradient-ai); color: white; border-color: transparent; box-shadow: var(--shadow-md); }
+        .tab-button i { font-size: 1rem; }
+
+        /* Tools Grid & Cards */
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-lg); }
+        .tool-card { background: var(--bg-primary); border: 1px solid var(--bg-tertiary); border-radius: 16px; padding: var(--space-lg); transition: all var(--transition-normal); cursor: pointer; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .tool-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-ai); transform: scaleX(0); transition: transform var(--transition-fast); }
+        .tool-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); border-color: var(--accent-blue); }
+        .tool-card:hover::before { transform: scaleX(1); }
+        .tool-header { display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md); }
+        .tool-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--gradient-ai); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; flex-shrink: 0; }
+        .tool-content { flex-grow: 1; }
+        .tool-title { font-size: 1.25rem; font-weight: 600; margin: 0 0 var(--space-sm) 0; color: var(--text-primary); }
+        .tool-description { color: var(--text-secondary); line-height: 1.5; margin: 0 0 var(--space-lg) 0; }
+        .tool-action { background: var(--gradient-ai); color: white; border: none; padding: var(--space-sm) var(--space-lg); border-radius: 8px; font-family: var(--font-secondary); font-weight: 600; cursor: pointer; transition: all var(--transition-fast); width: 100%; margin-top: auto; }
+        .tool-action:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+        /* Footer */
+        .footer { background: var(--bg-tertiary); padding: var(--space-2xl) 0 var(--space-lg) 0; border-top: 1px solid var(--glass-border); }
+        .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg); }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-lg); }
+        .footer-brand { display: flex; flex-direction: column; gap: var(--space-sm); }
+        .footer-logo { font-family: var(--font-accent); font-size: 1.5rem; font-weight: 800; background: var(--gradient-ai); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 0; }
+        .footer-tagline { color: var(--text-secondary); margin: 0; }
+        .footer-links { display: flex; align-items: center; gap: var(--space-md); }
+        .footer-link { color: var(--text-secondary); text-decoration: none; font-family: var(--font-secondary); transition: color var(--transition-fast); }
+        .footer-link:hover { color: var(--accent-blue); }
+        .footer-separator { color: var(--text-muted); }
+        .footer-bottom { text-align: center; padding-top: var(--space-lg); border-top: 1px solid var(--glass-border); }
+        .footer-copyright { color: var(--text-muted); font-size: 0.875rem; margin: 0; }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+          .hero-container { grid-template-columns: 1fr; gap: var(--space-2xl); text-align: center; }
+          .hero-cta-button { align-self: center; }
+          .hero-title { font-size: 3rem; }
+          .tools-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+        }
+        @media (max-width: 768px) {
+          /* Optimize navbar for mobile */
+          .navbar { padding: var(--space-sm) 0; }
+          .nav-container { padding: 0 var(--space-md); }
+          .nav-logo { flex: 1; }
+          .logo-text { font-size: 1.5rem; }
+          .logo-tagline { font-size: 0.65rem; }
+          .nav-controls { gap: var(--space-sm); }
+          .login-btn { padding: 6px 10px; font-size: 0.85rem; }
+          .theme-toggle { width: 38px; height: 38px; }
+          
+          .nav-menu { display: none; position: fixed; top: 65px; left: 0; right: 0; background: var(--bg-primary); border-top: 1px solid var(--glass-border); flex-direction: column; padding: var(--space-lg); gap: var(--space-lg); opacity: 0; visibility: hidden; transition: all var(--transition-normal); box-shadow: var(--shadow-lg); }
+          .nav-menu.active { opacity: 1; visibility: visible; }
+          .mobile-menu-toggle { display: flex; }
+          .mobile-menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+          .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
+          .mobile-menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+          
+          /* Hide floating search on mobile to avoid overlap */
+          .floating-search { display: none; }
+          
+          /* Optimize hero section for mobile */
+          .main-content { margin-top: 65px; }
+          .hero { 
+            padding: var(--space-lg) 0 var(--space-xl) 0; 
+            background: radial-gradient(ellipse at top, rgba(0, 212, 255, 0.08) 0%, transparent 60%);
+          }
+          .hero::before { opacity: 0.3; }
+          .hero-container { 
+            padding: var(--space-md); 
+            gap: var(--space-md);
+            max-width: 100%;
+          }
+          .hero-content {
+            gap: var(--space-md);
+            max-width: 100%;
+          }
+          .hero-title { 
+            font-size: 1.85rem; 
+            line-height: 1.25;
+            text-align: center;
+          }
+          .hero-description { 
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-align: center;
+            padding: 0 var(--space-sm);
+          }
+          .hero-cta-button { 
+            padding: 12px var(--space-lg); 
+            font-size: 0.95rem;
+            align-self: center;
+            width: fit-content;
+          }
+          .hero-visual { height: 300px; display: none; }
+          
+          /* Better gradient text on mobile */
+          .gradient-text {
+            display: inline-block;
+            line-height: 1.3;
+          }
+          
+          /* Optimize tools section */
+          .tools-section { padding: var(--space-xl) 0; }
+          .section-title { font-size: 2rem; }
+          .section-description { font-size: 1rem; }
+          .category-tabs { overflow-x: auto; justify-content: flex-start; padding-bottom: var(--space-sm); -ms-overflow-style: none; scrollbar-width: none; }
+          .category-tabs::-webkit-scrollbar { display: none; }
+          .tools-grid { grid-template-columns: 1fr; gap: var(--space-md); }
+          
+          /* Optimize tool cards */
+          .tool-card { padding: var(--space-md); }
+          .tool-title { font-size: 1.1rem; }
+          .tool-description { font-size: 0.9rem; }
+          
+          /* Footer optimization */
+          .footer { padding: var(--space-xl) 0 var(--space-md) 0; }
+          .footer-content { flex-direction: column; gap: var(--space-lg); text-align: center; }
+          .footer-links { flex-wrap: wrap; justify-content: center; }
+        }
+
+        /* Mobile: hide category tabs by default and show when activated from the mobile menu */
+        @media (max-width: 768px) {
+          /* Mobile Navigation Back Button */
+          .mobile-nav-back {
+            position: fixed;
+            top: var(--space-lg);
+            left: var(--space-lg);
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--bg-primary);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            z-index: 1200;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-fast);
+          }
+
+          .mobile-nav-back.visible {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          .mobile-nav-back:hover {
+            background: var(--bg-secondary);
+            color: var(--accent-blue);
+            transform: translateX(-4px);
+          }
+
+          /* Hidden by default on small screens */
+          /* Mobile menu slides in from right */
+          .category-tabs {
+            position: fixed;
+            top: 0;
+            right: -320px; /* Start offscreen, slightly wider for content */
+            width: 320px;
+            height: 100vh;
+            background: var(--bg-primary);
+            border-left: 1px solid var(--glass-border);
+            padding: var(--space-lg) var(--space-md) var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            z-index: 1100;
+            transition: right var(--transition-normal);
+            box-shadow: var(--shadow-lg);
+            overflow-y: auto;
+          }
+          
+          /* Mobile menu sections */
+          .mobile-menu-categories {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+          }
+          
+          .mobile-menu-tools {
+            display: none;
+            flex-direction: column;
+            gap: var(--space-md);
+          }
+          
+          .mobile-menu-tools.visible {
+            display: flex;
+          }
+          
+          .category-tabs.mobile-active {
+            right: 0; /* Slide in */
+          }
+          
+          /* Full-width buttons in mobile menu */
+          .tab-button {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: 8px;
+            text-align: left;
+            background: var(--bg-primary);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            font-weight: 700;
+            transition: all var(--transition-fast);
+          }
+          
+          /* Active and hover states for mobile menu buttons */
+          .tab-button:hover {
+            background: var(--glass-bg);
+            border-color: var(--accent-blue);
+            transform: translateX(4px);
+          }
+          
+          .tab-button.active {
+            background: var(--gradient-ai);
+            color: white;
+            border: none;
+            transform: translateX(4px);
+          }
+          
+          /* Add overlay when menu is open */
+          .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1050;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+          }
+          
+          .mobile-menu-overlay.active {
+            display: block;
+            opacity: 1;
+          }
+
+          /* Mobile menu styles */
+          .mobile-menu-close {
+            display: none;
+            position: fixed;
+            top: var(--space-md);
+            right: var(--space-md);
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            z-index: 1200;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+          }
+          
+          .mobile-menu-close:hover {
+            background: var(--accent-pink);
+            color: white;
+            transform: rotate(90deg);
+          }
+          
+          .category-tabs.mobile-active + .mobile-menu-close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          /* Mobile tool cards */
+          .mobile-menu-tools .tool-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: var(--space-md);
+            transition: all var(--transition-fast);
+          }
+
+          .mobile-menu-tools .tool-card:hover {
+            transform: translateX(4px);
+            border-color: var(--accent-blue);
+          }
+
+          .mobile-menu-tools .tool-header {
+            gap: var(--space-sm);
+          }
+
+          .mobile-menu-tools .tool-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+          }
+
+          .mobile-menu-tools .tool-title {
+            font-size: 1rem;
+            margin: 0;
+          }
+
+          .mobile-menu-tools .tool-description {
+            font-size: 0.875rem;
+            margin: var(--space-sm) 0 0;
+          }
+        }
+        @media (max-width: 480px) {
+          /* Extra optimization for small phones */
+          .navbar { padding: 8px 0; }
+          .nav-container { padding: 0 var(--space-sm); }
+          .logo-text { font-size: 1.25rem; }
+          .logo-tagline { font-size: 0.6rem; display: none; }
+          .login-btn { padding: 6px 10px; font-size: 0.8rem; gap: 4px; }
+          .login-btn i { font-size: 0.9rem; }
+          .theme-toggle { width: 36px; height: 36px; font-size: 1rem; }
+          
+          /* Keep search hidden on small phones */
+          .floating-search { display: none; }
+          
+          .main-content { margin-top: 60px; }
+          .hero { 
+            padding: var(--space-md) 0 var(--space-xl) 0;
+            background: radial-gradient(ellipse at top, rgba(0, 212, 255, 0.06) 0%, transparent 50%);
+          }
+          .hero::before { display: none; }
+          .hero-container { 
+            padding: var(--space-sm);
+          }
+          .hero-content { gap: var(--space-sm); }
+          .hero-title { 
+            font-size: 1.6rem;
+            line-height: 1.2;
+            padding: 0;
+          }
+          .hero-description { 
+            font-size: 0.9rem;
+            line-height: 1.5;
+            padding: 0;
+          }
+          .hero-cta-button { 
+            padding: 10px var(--space-md); 
+            font-size: 0.9rem;
+          }
+          
+          .tools-container { padding: 0 var(--space-sm); }
+          .section-header { margin-bottom: var(--space-xl); }
+          .section-title { font-size: 1.6rem; }
+          .section-description { font-size: 0.9rem; }
+          
+          .footer-container { padding: 0 var(--space-sm); }
+          .footer-logo { font-size: 1.25rem; }
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top { position: fixed; bottom: 30px; right: 30px; z-index: 1000; width: 50px; height: 50px; border: none; border-radius: 50%; background: var(--gradient-ai); color: white; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: var(--shadow-lg); transition: all var(--transition-fast); font-size: 1.25rem; }
+        .scroll-to-top:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+
+        /* Mobile Categories Menu */
+        .mobile-categories-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 450px;
+            height: 100vh;
+            background: var(--bg-primary);
+            border-left: 1px solid var(--glass-border);
+            z-index: 1150;
+            transition: right var(--transition-normal);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .mobile-categories-menu.active {
+            right: 0;
+        }
+        
+        /* Full screen on very small devices */
+        @media (max-width: 480px) {
+            .mobile-categories-menu {
+                max-width: 100%;
+                border-left: none;
+            }
+        }
+        .mobile-menu-header {
+            padding: var(--space-lg) var(--space-md);
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .mobile-search-box {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            transition: all var(--transition-fast);
+        }
+        .mobile-search-box:focus-within {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+        .mobile-search-icon {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .mobile-search-input {
+            flex: 1;
+            border: none;
+            background: none;
+            color: var(--text-primary);
+            font-family: var(--font-secondary);
+            font-size: 0.95rem;
+            outline: none;
+        }
+        .mobile-search-input::placeholder {
+            color: var(--text-muted);
+        }
+        .mobile-search-clear {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 4px 8px;
+            transition: all var(--transition-fast);
+            flex-shrink: 0;
+        }
+        .mobile-search-clear:hover {
+            color: var(--accent-pink);
+            transform: scale(1.1);
+        }
+        .mobile-menu-back-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all var(--transition-fast);
+            padding: 8px 12px;
+        }
+        .mobile-menu-back-btn:hover {
+            color: var(--accent-blue);
+            transform: translateX(-4px);
+        }
+        .mobile-login-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            flex-shrink: 0;
+        }
+        .mobile-login-btn:hover {
+            color: var(--accent-blue);
+            transform: scale(1.05);
+        }
+        .mobile-login-btn[data-logged="true"] {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: white;
+            border-color: transparent;
+        }
+        .mobile-menu-content {
+            padding: var(--space-lg) var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            overflow-y: auto;
+            flex: 1;
+            padding-bottom: 80px;
+        }
+        /* Mobile Bottom Navigation */
+        .mobile-bottom-nav {
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--glass-border);
+            padding: var(--space-md);
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        .mobile-nav-item {
+            flex: 1;
+            max-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            padding: var(--space-md);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .mobile-nav-item:hover {
+            transform: translateY(-2px);
+            background: var(--bg-secondary);
+            color: var(--accent-blue);
+        }
+        .mobile-nav-item i {
+            font-size: 1.5rem;
+        }
+        .mobile-nav-item[data-logged="true"] {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: white;
+            border-color: transparent;
+        }
+        .mobile-nav-item[data-logged="true"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+        }
+        .mobile-category-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border: none;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-align: left;
+            white-space: nowrap;
+        }
+        .mobile-category-btn:hover {
+            transform: translateX(8px);
+            background: var(--glass-bg);
+            color: var(--accent-blue);
+        }
+        .mobile-category-btn i {
+            width: 24px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        /* Category-specific button colors for mobile */
+        .mobile-category-btn[data-category="all"] { background: linear-gradient(to right, #7367F0, #CE9FFC); color: white; }
+        .mobile-category-btn[data-category="financial"] { background: linear-gradient(to right, #FF3366, #FF6B6B); color: white; }
+        .mobile-category-btn[data-category="health"] { background: linear-gradient(to right, #28C76F, #81FBB8); color: white; }
+        .mobile-category-btn[data-category="math"] { background: linear-gradient(to right, #8B5CF6, #D946EF); color: white; }
+        .mobile-category-btn[data-category="datetime"] { background: linear-gradient(to right, #a8edea, #fed6e3); color: #333; }
+        .mobile-category-btn[data-category="business"] { background: linear-gradient(to right, #FF7A59, #FFB86B); color: white; }
+        .mobile-category-btn[data-category="construction"] { background: linear-gradient(to right, #4E4F6A, #7A6F52); color: white; }
+        .mobile-category-btn[data-category="electricity"] { background: linear-gradient(to right, #FFD166, #FFB703); color: #0a0a0a; }
+        .mobile-category-btn[data-category="travel"] { background: linear-gradient(to right, #00C6FF, #0072FF); color: white; }
+        .mobile-category-btn[data-category="taxation"] { background: linear-gradient(to right, #06B6D4, #10B981); color: white; }
+
+        /* Mobile Tools List Styles */
+        .mobile-menu-tools-header {
+            padding: var(--space-lg) var(--space-md);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .mobile-tools-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: var(--space-md);
+        }
+        .mobile-tool-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        .mobile-tool-item:hover {
+            transform: translateX(8px);
+            background: var(--glass-bg);
+            border-color: var(--accent-blue);
+        }
+        .mobile-tool-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--gradient-ai);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .mobile-tool-info {
+            flex-grow: 1;
+        }
+        .mobile-tool-title {
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            color: var(--text-primary);
+        }
+        .mobile-tool-description {
+            font-family: var(--font-secondary);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        /* Search Suggestions Styling */
+        .suggestion-item { padding: var(--space-md); display: flex; align-items: center; gap: var(--space-md); cursor: pointer; transition: all var(--transition-fast); border-bottom: 1px solid var(--glass-border); }
+        .suggestion-item:last-child { border-bottom: none; }
+        .suggestion-item:hover { background: var(--glass-bg); }
+        .suggestion-item i { color: var(--accent-blue); width: 20px; text-align: center; }
+        .suggestion-item span { color: var(--text-primary); font-family: var(--font-secondary); font-weight: 500; }
+
+        /* No Results State */
+        .no-results { grid-column: 1 / -1; text-align: center; padding: var(--space-3xl); color: var(--text-secondary); }
+        .no-results i { font-size: 4rem; color: var(--text-muted); margin-bottom: var(--space-lg); }
+        .no-results h3 { font-size: 1.5rem; margin: 0 0 var(--space-md) 0; color: var(--text-primary); }
+        .no-results p { margin: 0; font-size: 1rem; }
+        
+        /* Tool Card Animation States */
+        .tool-card { opacity: 0; transform: translateY(20px); transition: all var(--transition-normal); }
+        .tool-card.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Category-specific Tool Card Accents */
+        .tool-card[data-category="financial"] .tool-icon { background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-cyan) 100%); }
+        .tool-card[data-category="health"] .tool-icon { background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-purple) 100%); }
+        .tool-card[data-category="math"] .tool-icon { background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%); }
+  .tool-card[data-category="business"] .tool-icon { background: linear-gradient(135deg, #FF7A59 0%, #FFB86B 100%); }
+        
+        /* Category Button Backgrounds (desktop + mobile) — target by data-category so colors stay correct even if button order changes */
+        #categoryTabs .tab-button[data-category="all"],
+        #mobileCategoryTabs .tab-button[data-category="all"] {
+          background: linear-gradient(to right, #7367F0, #CE9FFC);
+        }
+
+        #categoryTabs .tab-button[data-category="financial"],
+        #mobileCategoryTabs .tab-button[data-category="financial"] {
+          background: linear-gradient(to right, #FF3366, #FF6B6B);
+        }
+
+        #categoryTabs .tab-button[data-category="health"],
+        #mobileCategoryTabs .tab-button[data-category="health"] {
+          background: linear-gradient(to right, #28C76F, #81FBB8);
+        }
+
+        #categoryTabs .tab-button[data-category="math"],
+        #mobileCategoryTabs .tab-button[data-category="math"] {
+          background: linear-gradient(to right, #8B5CF6, #D946EF);
+        }
+
+        #categoryTabs .tab-button[data-category="datetime"],
+        #mobileCategoryTabs .tab-button[data-category="datetime"] {
+          background: linear-gradient(to right, #a8edea, #fed6e3);
+        }
+
+        #categoryTabs .tab-button[data-category="business"],
+        #mobileCategoryTabs .tab-button[data-category="business"] {
+          background: linear-gradient(to right, #FF7A59, #FFB86B);
+        }
+
+        /* New categories */
+        #categoryTabs .tab-button[data-category="construction"],
+        #mobileCategoryTabs .tab-button[data-category="construction"] {
+          background: linear-gradient(to right, #4E4F6A, #7A6F52);
+        }
+
+        #categoryTabs .tab-button[data-category="electricity"],
+        #mobileCategoryTabs .tab-button[data-category="electricity"] {
+          background: linear-gradient(to right, #FFD166, #FFB703);
+          color: #0a0a0a;
+        }
+
+        #categoryTabs .tab-button[data-category="travel"],
+        #mobileCategoryTabs .tab-button[data-category="travel"] {
+          background: linear-gradient(to right, #00C6FF, #0072FF);
+        }
+
+        #categoryTabs .tab-button[data-category="taxation"],
+        #mobileCategoryTabs .tab-button[data-category="taxation"] {
+          background: linear-gradient(to right, #06B6D4, #10B981);
+        }
+        
+        /* --- NEW STYLES: Calculator Modal --- */
+        .modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(10, 14, 39, 0.7);
+          backdrop-filter: blur(8px);
+          z-index: 2000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity var(--transition-normal), visibility var(--transition-normal);
+        }
+        .modal-overlay.visible {
+          opacity: 1;
+          visibility: visible;
+        }
+        .modal-content {
+          background: var(--bg-secondary);
+          padding: var(--space-xl);
+          border-radius: 16px;
+          width: 90%;
+          max-width: 500px;
+          max-height: 90vh;
+          overflow-y: auto;
+          box-shadow: var(--shadow-xl);
+          transform: scale(0.95);
+          transition: transform var(--transition-normal);
+        }
+        .modal-overlay.visible .modal-content {
+          transform: scale(1);
+        }
+        .modal-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: var(--space-lg);
+          padding-bottom: var(--space-md);
+          border-bottom: 1px solid var(--bg-tertiary);
+        }
+        .modal-title {
+          font-family: var(--font-accent);
+          font-size: 1.75rem;
+          font-weight: 700;
+          background: var(--gradient-ai);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .modal-close-btn {
+          background: var(--bg-tertiary);
+          border: none;
+          color: var(--text-secondary);
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          font-size: 1.25rem;
+          cursor: pointer;
+          transition: all var(--transition-fast);
+        }
+        .modal-close-btn:hover {
+          background: var(--accent-pink);
+          color: white;
+          transform: rotate(90deg);
+        }
+        .calculator-form .form-group {
+          margin-bottom: var(--space-lg);
+        }
+        .calculator-form label {
+          display: block;
+          font-family: var(--font-secondary);
+          font-weight: 600;
+          color: var(--text-secondary);
+          margin-bottom: var(--space-sm);
+        }
+        .calculator-form input, .calculator-form select {
+          width: 100%;
+          padding: var(--space-md);
+          border: 1px solid var(--bg-tertiary);
+          background: var(--bg-primary);
+          border-radius: 8px;
+          color: var(--text-primary);
+          font-size: 1rem;
+          transition: border-color var(--transition-fast);
+        }
+        .calculator-form input:focus, .calculator-form select:focus {
+          outline: none;
+          border-color: var(--accent-blue);
+        }
+        .calculator-result-area {
+          margin-top: var(--space-xl);
+          padding: var(--space-lg);
+          background: var(--bg-tertiary);
+          border-radius: 12px;
+          text-align: center;
+        }
+        .result-title {
+          font-family: var(--font-secondary);
+          color: var(--text-muted);
+          font-size: 0.875rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+        .result-value {
+          font-family: var(--font-accent);
+          font-size: 2.5rem;
+          font-weight: 800;
+          margin: var(--space-sm) 0;
+          color: var(--text-primary);
+          word-wrap: break-word;
+        }
+        .result-interpretation {
+          color: var(--text-secondary);
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+      <div class="nav-logo">
+        <h1 class="logo-text">Calculator Loop</h1>
+        <span class="logo-tagline">Your All-in-One Calculator Suite</span>
+      </div>
+            
+            <div class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        
+        <!-- Categories dropdown in nav (shows badge with count = 9) -->
+        <div class="nav-categories" id="navCategories">
+            <button class="nav-categories-btn" id="navCategoriesBtn" aria-haspopup="true" aria-expanded="false">
+                Categories <span class="category-badge" id="navCategoryBadge">9</span>
+                <i class="fas fa-caret-down" style="margin-left:8px;font-size:0.9rem;color:var(--text-secondary);"></i>
+            </button>
+            <div class="nav-category-dropdown" id="navCategoryDropdown" aria-label="Categories dropdown">
+                <a href="#calculators" class="dropdown-item" data-category="all"><i class="fas fa-th-large"></i> All Calculators</a>
+                <a href="#calculators" class="dropdown-item" data-category="financial"><i class="fas fa-chart-line"></i> Financial</a>
+                <a href="#calculators" class="dropdown-item" data-category="health"><i class="fas fa-heartbeat"></i> Fitness &amp; Health</a>
+                <a href="#calculators" class="dropdown-item" data-category="math"><i class="fas fa-calculator"></i> Math</a>
+                <a href="#calculators" class="dropdown-item" data-category="datetime"><i class="fas fa-clock"></i> Date &amp; Time</a>
+                <a href="#calculators" class="dropdown-item" data-category="business"><i class="fas fa-briefcase"></i> Business &amp; Marketing</a>
+                <a href="#calculators" class="dropdown-item" data-category="construction"><i class="fas fa-hard-hat"></i> Construction &amp; Engineering</a>
+                <a href="#calculators" class="dropdown-item" data-category="electricity"><i class="fas fa-bolt"></i> Electricity &amp; Energy</a>
+                <a href="#calculators" class="dropdown-item" data-category="travel"><i class="fas fa-plane"></i> Travel &amp; Transport</a>
+                <a href="#calculators" class="dropdown-item" data-category="taxation"><i class="fas fa-file-invoice-dollar"></i> Taxation &amp; Accounting</a>
+            </div>
+        </div>
+        
+        <a href="#calculators" class="nav-link">Calculators</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="login-btn" id="loginBtn">
+                    <i class="fas fa-user"></i>
+                    Login
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Search Bar -->
+    <div class="floating-search" id="floatingSearch">
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" placeholder="Search 100+ smart calculators..." class="search-input" id="searchInput">
+            <button class="search-action" id="searchAction">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="search-clear" id="searchClear">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="search-suggestions" id="searchSuggestions"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Intelligent Calculators</span>
+                        for Every Need
+                    </h1>
+                    <p class="hero-description">
+                        From complex financial planning to daily health metrics and advanced math problems,
+                        find the perfect tool in our comprehensive, AI-enhanced suite.
+                    </p>
+                    <a href="#calculators" class="hero-cta-button">
+                        <i class="fas fa-rocket"></i>
+                        Explore Calculators
+                    </a>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="floating-cards">
+                        <div class="feature-card card-1">
+                            <i class="fas fa-home"></i>
+                            <span>Mortgage Calculator</span>
+                        </div>
+                        <div class="feature-card card-2">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>BMI Calculator</span>
+                        </div>
+                        <div class="feature-card card-3">
+                            <i class="fas fa-calculator"></i>
+                            <span>Scientific Calculator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculators Section -->
+        <section class="tools-section" id="calculators">
+            <div class="tools-container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="gradient-text">100+</span> Smart Calculators
+                    </h2>
+                    <p class="section-description">
+                        Find the right tool for the job, organized by category.
+                    </p>
+                </div>
+
+                <!-- Category Tabs -->
+                <div class="category-tabs" id="categoryTabs">
+                    <button class="tab-button active" data-category="all">
+                        <i class="fas fa-th-large"></i>
+                        All Calculators
+                    </button>
+                    <button class="tab-button" data-category="financial">
+                        <i class="fas fa-chart-line"></i>
+                        Financial
+                    </button>
+                    <button class="tab-button" data-category="health">
+                        <i class="fas fa-heartbeat"></i>
+                        Fitness & Health
+                    </button>
+                    <button class="tab-button" data-category="math">
+                        <i class="fas fa-calculator"></i>
+                        Math
+                    </button>
+                    <button class="tab-button" data-category="datetime">
+                        <i class="fas fa-clock"></i>
+                        Date & Time
+                    </button>
+          <button class="tab-button" data-category="business">
+            <i class="fas fa-briefcase"></i>
+            Business & Marketing
+          </button>
+          <button class="tab-button" data-category="construction">
+            <i class="fas fa-hard-hat"></i>
+            Construction & Engineering
+          </button>
+          <button class="tab-button" data-category="electricity">
+            <i class="fas fa-bolt"></i>
+            Electricity & Energy
+          </button>
+          <button class="tab-button" data-category="travel">
+            <i class="fas fa-plane"></i>
+            Travel & Transport
+          </button>
+          <button class="tab-button" data-category="taxation">
+            <i class="fas fa-file-invoice-dollar"></i>
+            Taxation & Accounting
+          </button>
+                </div>
+
+                <!-- Tools Grid -->
+                <div class="tools-grid" id="toolsGrid">
+                    <!-- Calculators will be dynamically populated here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+        <div class="footer-brand">
+          <h3 class="footer-logo">Calculator Loop</h3>
+          <p class="footer-tagline">AI-Enhanced Calculators for Everyone</p>
+        </div>
+                
+                <div class="footer-links">
+                    <a href="#privacy" class="footer-link">Privacy Policy</a>
+                    <span class="footer-separator">|</span>
+                    <a href="#terms" class="footer-link">Terms of Service</a>
+                    <span class="footer-separator">|</span>
+                    <a href="#report" class="footer-link">Report Issue</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Calculator Loop. Your trusted source for smart calculations.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- NEW: Calculator Modal -->
+    <div class="modal-overlay" id="calculatorModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Calculator</h2>
+                <button class="modal-close-btn" id="modalCloseBtn">×</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Calculator form will be injected here -->
+            </div>
+        </div>
+    </div>
+
+        <!-- Login Modal -->
+        <div class="modal-overlay" id="loginModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Sign In</h2>
+                    <button class="modal-close-btn" id="loginModalClose">×</button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm" class="calculator-form">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" placeholder="••••••" required>
+                        </div>
+                        <div style="display:flex;gap:12px;justify-content:flex-end;">
+                            <button type="submit" class="tool-action" id="loginSubmit">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
+    <!-- Mobile Categories Menu (shows all categories when hamburger is clicked on mobile) -->
+    <div class="mobile-categories-menu" id="mobileCategoriesMenu">
+        <div class="mobile-menu-header">
+            <button class="mobile-menu-back-btn" id="mobileCategoriesBack">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <!-- Mobile Search Bar -->
+            <div class="mobile-search-box">
+                <i class="fas fa-search mobile-search-icon"></i>
+                <input type="text" id="mobileSearchInput" class="mobile-search-input" placeholder="Search tools...">
+                <button class="mobile-search-clear" id="mobileSearchClear" style="display: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu-content" id="mobileMenuContent">
+            <button class="mobile-category-btn" data-category="all">
+                <i class="fas fa-th-large"></i>
+                All Calculators
+            </button>
+            <button class="mobile-category-btn" data-category="financial">
+                <i class="fas fa-chart-line"></i>
+                Financial
+            </button>
+            <button class="mobile-category-btn" data-category="health">
+                <i class="fas fa-heartbeat"></i>
+                Fitness &amp; Health
+            </button>
+            <button class="mobile-category-btn" data-category="math">
+                <i class="fas fa-calculator"></i>
+                Math
+            </button>
+            <button class="mobile-category-btn" data-category="datetime">
+                <i class="fas fa-clock"></i>
+                Date &amp; Time
+            </button>
+            <button class="mobile-category-btn" data-category="business">
+                <i class="fas fa-briefcase"></i>
+                Business &amp; Marketing
+            </button>
+            <button class="mobile-category-btn" data-category="construction">
+                <i class="fas fa-hard-hat"></i>
+                Construction &amp; Engineering
+            </button>
+            <button class="mobile-category-btn" data-category="electricity">
+                <i class="fas fa-bolt"></i>
+                Electricity &amp; Energy
+            </button>
+            <button class="mobile-category-btn" data-category="travel">
+                <i class="fas fa-plane"></i>
+                Travel &amp; Transport
+            </button>
+            <button class="mobile-category-btn" data-category="taxation">
+                <i class="fas fa-file-invoice-dollar"></i>
+                Taxation &amp; Accounting
+            </button>
+        </div>
+        <!-- Mobile Bottom Navigation -->
+        <div class="mobile-bottom-nav">
+            <button class="mobile-nav-item" id="mobileLoginBtn">
+                <i class="fas fa-user"></i>
+                <span>Login</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // Calculator Hub AI - Interactive JavaScript Functionality
+
+        const toolsData = {
+          financial: [
+            { id: 'loan-calculator', title: 'Loan Calculator', description: 'Calculate monthly loan payments and interest.', icon: 'fas fa-hand-holding-usd', url: './financial-calculators/loan-calculator.html' },
+            { id: 'mortgage-calculator', title: 'Mortgage Calculator', description: 'Estimate your monthly mortgage payments.', icon: 'fas fa-home', url: './financial-calculators/mortgage-calculator.html' },
+            { id: 'investment-calculator', title: 'Investment Calculator', description: 'Calculate future value of your investments.', icon: 'fas fa-chart-line', url: './financial-calculators/investment-calculator.html' },
+            { id: 'retirement-calculator', title: 'Retirement Calculator', description: 'Plan your retirement savings goals.', icon: 'fas fa-umbrella-beach', url: './financial-calculators/retirement-calculator.html' },
+            { id: 'savings-calculator', title: 'Savings Calculator', description: 'See how your savings will grow over time.', icon: 'fas fa-piggy-bank', url: './financial-calculators/savings-calculator.html' },
+            { id: 'tax-calculator', title: 'Income Tax Calculator', description: 'Calculate your estimated income tax.', icon: 'fas fa-file-invoice-dollar', url: './financial-calculators/tax-calculator.html' },
+            { id: 'compound-interest', title: 'Compound Interest Calculator', description: 'Calculate compound interest earnings.', icon: 'fas fa-percentage', url: './financial-calculators/compound-interest.html' },
+            { id: 'roi-calculator', title: 'ROI Calculator', description: 'Calculate return on investment percentage.', icon: 'fas fa-chart-pie', url: './financial-calculators/roi-calculator.html' },
+            { id: 'mortgage-payoff-calculator', title: 'Mortgage Payoff Calculator', description: 'Find out how soon you can pay off your mortgage.', icon: 'fas fa-calendar-check', url: './financial-calculators/mortgage-payoff-calculator.html' },
+            { id: 'rent-calculator', title: 'Rent Calculator', description: 'Calculate rental costs and affordability.', icon: 'fas fa-key', url: './financial-calculators/rent-calculator.html' },
+            { id: 'auto-loan-calculator', title: 'Auto Loan Calculator', description: 'Calculate car loan payments.', icon: 'fas fa-car', url: './financial-calculators/auto-loan-calculator.html' },
+            { id: 'credit-card-payoff', title: 'Credit Card Payoff Calculator', description: 'Plan your credit card debt payoff.', icon: 'fas fa-credit-card', url: './financial-calculators/credit-card-payoff.html' },
+            { id: 'debt-payoff-calculator', title: 'Debt Payoff Calculator', description: 'Create a plan to eliminate your debt.', icon: 'fas fa-money-check-alt', url: './financial-calculators/debt-payoff-calculator.html' },
+            { id: 'inflation-calculator', title: 'Inflation Calculator', description: 'Calculate the impact of inflation.', icon: 'fas fa-chart-area', url: './financial-calculators/inflation-calculator.html' },
+            { id: 'present-value-calculator', title: 'Present Value Calculator', description: 'Calculate present value of future money.', icon: 'fas fa-clock', url: './financial-calculators/present-value-calculator.html' },
+            { id: 'future-value-calculator', title: 'Future Value Calculator', description: 'Calculate future value of current money.', icon: 'fas fa-forward', url: './financial-calculators/future-value-calculator.html' },
+            { id: 'amortization-calculator', title: 'Amortization Calculator', description: 'View loan amortization schedule.', icon: 'fas fa-table', url: './financial-calculators/amortization-calculator.html' },
+            { id: 'apr-calculator', title: 'APR Calculator', description: 'Calculate annual percentage rate.', icon: 'fas fa-percent', url: './financial-calculators/apr-calculator.html' },
+            { id: 'net-worth-calculator', title: 'Net Worth Calculator', description: 'Calculate your total net worth.', icon: 'fas fa-coins', url: './financial-calculators/net-worth-calculator.html' },
+            { id: 'budget-calculator', title: 'Budget Calculator', description: 'Plan your monthly budget.', icon: 'fas fa-calculator', url: './financial-calculators/budget-calculator.html' },
+            { id: 'paycheck-calculator', title: 'Paycheck Calculator', description: 'Calculate take-home pay after taxes.', icon: 'fas fa-money-bill-wave', url: './financial-calculators/paycheck-calculator.html' },
+            { id: 'sales-tax-calculator', title: 'Sales Tax Calculator', description: 'Calculate sales tax on purchases.', icon: 'fas fa-receipt', url: './financial-calculators/sales-tax-calculator.html' },
+            { id: 'tip-calculator', title: 'Tip Calculator', description: 'Calculate tips and split bills.', icon: 'fas fa-hand-holding-heart', url: './financial-calculators/tip-calculator.html' },
+            { id: 'currency-converter', title: 'Currency Converter', description: 'Convert between different currencies.', icon: 'fas fa-exchange-alt', url: './financial-calculators/currency-converter.html' },
+            { id: 'crypto-calculator', title: 'Crypto Investment Calculator', description: 'Calculate cryptocurrency profits.', icon: 'fab fa-bitcoin', url: './financial-calculators/crypto-calculator.html' },
+            { id: 'stock-profit-calculator', title: 'Stock Profit Calculator', description: 'Calculate stock trading profits.', icon: 'fas fa-chart-candlestick', url: './financial-calculators/stock-profit-calculator.html' },
+            { id: 'dividend-calculator', title: 'Dividend Calculator', description: 'Calculate dividend income over time.', icon: 'fas fa-coins', url: './financial-calculators/dividend-calculator.html' },
+            { id: 'bond-calculator', title: 'Bond Calculator', description: 'Calculate bond yields and returns.', icon: 'fas fa-certificate', url: './financial-calculators/bond-calculator.html' },
+            { id: 'college-savings-calculator', title: 'College Savings Calculator', description: 'Plan for education expenses.', icon: 'fas fa-graduation-cap', url: './financial-calculators/college-savings-calculator.html' },
+            { id: 'emergency-fund-calculator', title: 'Emergency Fund Calculator', description: 'Calculate emergency fund needs.', icon: 'fas fa-first-aid', url: './financial-calculators/emergency-fund-calculator.html' },
+            { id: 'emi-calculator', title: 'EMI Calculator', description: 'Calculate Equated Monthly Installment for loans.', icon: 'fas fa-calendar-check', url: './financial-calculators/emi-calculator.html' },
+            { id: 'sip-calculator', title: 'SIP Calculator', description: 'Calculate Systematic Investment Plan returns.', icon: 'fas fa-chart-line', url: './financial-calculators/sip-calculator.html' },
+            { id: 'gst-calculator', title: 'GST Calculator', description: 'Calculate Goods and Services Tax.', icon: 'fas fa-receipt', url: './financial-calculators/gst-calculator.html' },
+          ],
+          health: [
+            { id: 'bmi-calculator', title: 'BMI Calculator', description: 'Calculate your Body Mass Index.', icon: 'fas fa-weight-scale', url: './fitness-health/bmi-calculator.html' },
+            { id: 'calorie-calculator', title: 'Calorie Calculator', description: 'Estimate your daily calorie needs.', icon: 'fas fa-apple-alt', url: './fitness-health/calorie-calculator.html' },
+            { id: 'body-fat-calculator', title: 'Body Fat Calculator', description: 'Estimate your body fat percentage.', icon: 'fas fa-percentage', url: './fitness-health/body-fat-calculator.html' },
+            { id: 'bmr-calculator', title: 'BMR Calculator', description: 'Calculate your Basal Metabolic Rate.', icon: 'fas fa-fire', url: './fitness-health/bmr-calculator.html' },
+            { id: 'ideal-weight-calculator', title: 'Ideal Weight Calculator', description: 'Find your ideal healthy weight range.', icon: 'fas fa-balance-scale-right', url: './fitness-health/ideal-weight-calculator.html' },
+            { id: 'pace-calculator', title: 'Pace Calculator', description: 'Calculate running pace, time, and distance.', icon: 'fas fa-running', url: './fitness-health/pace-calculator.html' },
+            { id: 'lean-body-mass-calculator', title: 'Lean Body Mass Calculator', description: 'Estimate your lean body mass.', icon: 'fas fa-dumbbell', url: './fitness-health/lean-body-mass-calculator.html' },
+            { id: 'calories-burned-calculator', title: 'Calories Burned Calculator', description: 'Estimate calories burned during activities.', icon: 'fas fa-fire-alt', url: './fitness-health/calories-burned-calculator.html' },
+            { id: 'one-rep-max-calculator', title: 'One Rep Max Calculator', description: 'Estimate your one-repetition maximum for lifts.', icon: 'fas fa-trophy', url: './fitness-health/one-rep-max-calculator.html' },
+            { id: 'target-heart-rate-calculator', title: 'Target Heart Rate Calculator', description: 'Find your target heart rate zones for exercise.', icon: 'fas fa-heart-pulse', url: './fitness-health/target-heart-rate-calculator.html' },
+            { id: 'pregnancy-calculator', title: 'Pregnancy Calculator', description: 'Track your pregnancy and due date.', icon: 'fas fa-baby', url: './fitness-health/pregnancy-calculator.html' },
+            { id: 'due-date-calculator', title: 'Due Date Calculator', description: 'Estimate your baby\'s due date.', icon: 'fas fa-calendar-alt', url: './fitness-health/due-date-calculator.html' },
+            { id: 'ovulation-calculator', title: 'Ovulation Calculator', description: 'Predict your most fertile days.', icon: 'fas fa-leaf', url: './fitness-health/ovulation-calculator.html' },
+            { id: 'macro-calculator', title: 'Macro Calculator', description: 'Calculate your optimal macronutrient intake.', icon: 'fas fa-utensils', url: './fitness-health/macro-calculator.html' },
+            { id: 'tdee-calculator', title: 'TDEE Calculator', description: 'Calculate your Total Daily Energy Expenditure.', icon: 'fas fa-battery-full', url: './fitness-health/tdee-calculator.html' },
+          ],
+          math: [
+            { id: 'scientific-calculator', title: 'Scientific Calculator', description: 'Perform advanced mathematical calculations.', icon: 'fas fa-flask', url: './math-geometry/scientific-calculator.html' },
+            { id: 'fraction-calculator', title: 'Fraction Calculator', description: 'Add, subtract, multiply, and divide fractions.', icon: 'fas fa-divide', url: './math-geometry/fraction-calculator.html' },
+            { id: 'percentage-calculator', title: 'Percentage Calculator', description: 'Solve various percentage problems.', icon: 'fas fa-percent', url: './math-geometry/percentage-calculator.html' },
+            { id: 'random-number-generator', title: 'Random Number Generator', description: 'Generate random numbers within a range.', icon: 'fas fa-random', url: './math-geometry/random-number-generator.html' },
+            { id: 'exponent-calculator', title: 'Exponent Calculator', description: 'Solve expressions with exponents.', icon: 'fas fa-superscript', url: './math-geometry/exponent-calculator.html' },
+            { id: 'binary-calculator', title: 'Binary Calculator', description: 'Perform calculations in binary.', icon: 'fas fa-microchip', url: './math-geometry/binary-calculator.html' },
+            { id: 'quadratic-formula-calculator', title: 'Quadratic Formula Calculator', description: 'Solve quadratic equations.', icon: 'fas fa-square-root-alt', url: './math-geometry/quadratic-formula-calculator.html' },
+            { id: 'log-calculator', title: 'Log Calculator', description: 'Calculate logarithms with any base.', icon: 'fas fa-wave-square', url: './math-geometry/log-calculator.html' },
+            { id: 'ratio-calculator', title: 'Ratio Calculator', description: 'Simplify and solve ratios.', icon: 'fas fa-equals', url: './math-geometry/ratio-calculator.html' },
+            { id: 'standard-deviation-calculator', title: 'Standard Deviation Calculator', description: 'Calculate the standard deviation of a data set.', icon: 'fas fa-chart-bar', url: './math-geometry/standard-deviation-calculator.html' },
+            { id: 'probability-calculator', title: 'Probability Calculator', description: 'Calculate the probability of events.', icon: 'fas fa-dice', url: './math-geometry/probability-calculator.html' },
+            { id: 'mean-median-mode-range-calculator', title: 'Mean, Median, Mode, Range Calculator', description: 'Find central tendency of a data set.', icon: 'fas fa-sort-numeric-down', url: './math-geometry/mean-median-mode-range-calculator.html' },
+            { id: 'triangle-calculator', title: 'Triangle Calculator', description: 'Solve for the sides and angles of a triangle.', icon: 'fas fa-drafting-compass', url: './math-geometry/triangle-calculator.html' },
+            { id: 'volume-calculator', title: 'Volume Calculator', description: 'Calculate the volume of various 3D shapes.', icon: 'fas fa-cube', url: './math-geometry/volume-calculator.html' },
+            { id: 'area-calculator', title: 'Area Calculator', description: 'Calculate the area of 2D shapes.', icon: 'fas fa-square', url: './math-geometry/area-calculator.html' },
+            { id: 'distance-calculator', title: 'Distance Calculator', description: 'Find the distance between two points.', icon: 'fas fa-ruler-horizontal', url: './math-geometry/distance-calculator.html' },
+          ],
+          datetime: [
+            { id: 'age-calculator', title: 'Age Calculator', description: 'Calculate your exact age in years, months, and days.', icon: 'fas fa-birthday-cake', url: './date-time/age-calculator.html' },
+            { id: 'date-difference-calculator', title: 'Date Difference Calculator', description: 'Calculate difference between two dates.', icon: 'fas fa-calendar-minus', url: './date-time/date-difference-calculator.html' },
+            { id: 'countdown-timer', title: 'Countdown Timer', description: 'Set countdown for any event.', icon: 'fas fa-hourglass-half', url: './date-time/countdown-timer.html' },
+            { id: 'timezone-converter', title: 'Time Zone Converter', description: 'Convert time across different time zones.', icon: 'fas fa-globe', url: './date-time/timezone-converter.html' },
+            { id: 'pomodoro-timer', title: 'Pomodoro Timer', description: 'Boost productivity with timed work sessions.', icon: 'fas fa-clock', url: './date-time/pomodoro-timer.html' },
+          ],
+          business: [
+            { id: 'roi-calculator', title: 'ROI Calculator', description: 'Calculate return on investment for campaigns or projects.', icon: 'fas fa-chart-line', url: './business-tools/roi-calculator.html' },
+            { id: 'cac-calculator', title: 'Customer Acquisition Cost (CAC) Calculator', description: 'Estimate the cost to acquire a new customer.', icon: 'fas fa-user-plus', url: './business-tools/cac-calculator.html' },
+            { id: 'ltv-calculator', title: 'Customer Lifetime Value (LTV) Calculator', description: 'Estimate the lifetime value of a customer.', icon: 'fas fa-dollar-sign', url: './business-tools/ltv-calculator.html' },
+            { id: 'breakeven-calculator', title: 'Break-even Calculator', description: 'Find the sales volume needed to break even.', icon: 'fas fa-balance-scale', url: './business-tools/breakeven-calculator.html' },
+            { id: 'conversion-rate-calculator', title: 'Conversion Rate Calculator', description: 'Calculate conversion rates from visitors to customers.', icon: 'fas fa-percentage', url: './business-tools/conversion-rate-calculator.html' },
+            { id: 'cac-payback-calculator', title: 'CAC Payback Period Calculator', description: 'Estimate how long it takes to recover CAC.', icon: 'fas fa-clock', url: './business-tools/cac-payback-calculator.html' },
+            { id: 'churn-rate-calculator', title: 'Churn Rate Calculator', description: 'Calculate customer churn rate over a period.', icon: 'fas fa-user-slash', url: './business-tools/churn-rate-calculator.html' },
+            { id: 'ad-budget-calculator', title: 'Ad Budget Calculator', description: 'Allocate ad budget across channels based on goals.', icon: 'fas fa-bullhorn', url: './business-tools/ad-budget-calculator.html' },
+            { id: 'social-engagement-calculator', title: 'Social Media Engagement Calculator', description: 'Measure engagement rates and projected reach.', icon: 'fas fa-hashtag', url: './business-tools/social-engagement-calculator.html' },
+            { id: 'marketing-roi-calculator', title: 'Marketing ROI Calculator', description: 'Estimate campaign return on ad spend (ROAS).', icon: 'fas fa-chart-pie', url: './business-tools/marketing-roi-calculator.html' }
+          ]
+          ,
+          construction: [
+            { id: 'load-calculator', title: 'Structural Load Calculator', description: 'Estimate structural loads for beams and columns.', icon: 'fas fa-ruler-combined', url: './construction-tools/load-calculator.html' },
+            { id: 'concrete-calculator', title: 'Concrete Volume Calculator', description: 'Calculate concrete quantity for slabs, beams, columns & footings.', icon: 'fas fa-cubes', url: './construction-tools/concrete-calculator.html' },
+            { id: 'steel-weight-calculator', title: 'Steel Weight Calculator', description: 'Calculate weight of steel sections, bars & reinforcement.', icon: 'fas fa-weight-hanging', url: './construction-tools/steel-weight-calculator.html' },
+            { id: 'brick-calculator', title: 'Brick Calculator', description: 'Calculate bricks, mortar & cost for wall construction.', icon: 'fas fa-th', url: './construction-tools/brick-calculator.html' },
+            { id: 'paint-calculator', title: 'Paint Calculator', description: 'Calculate paint quantity & cost for walls and ceilings.', icon: 'fas fa-paint-roller', url: './construction-tools/paint-calculator.html' },
+            { id: 'staircase-calculator', title: 'Staircase Calculator', description: 'Design stairs with optimal riser, tread & code compliance.', icon: 'fas fa-sort-amount-up', url: './construction-tools/staircase-calculator.html' },
+            { id: 'excavation-calculator', title: 'Excavation Calculator', description: 'Calculate earth removal, backfill & excavation cost.', icon: 'fas fa-hard-hat', url: './construction-tools/excavation-calculator.html' },
+            { id: 'roof-area-calculator', title: 'Roof Area Calculator', description: 'Calculate roof area for material estimation & drainage.', icon: 'fas fa-home', url: './construction-tools/roof-area-calculator.html' }
+          ],
+          electricity: [
+            { id: 'power-consumption-calculator', title: 'Power Consumption Calculator', description: 'Estimate power & energy consumption for appliances.', icon: 'fas fa-bolt', url: './electricity-tools/power-consumption-calculator.html' },
+            { id: 'solar-panel-calculator', title: 'Solar Panel Calculator', description: 'Calculate solar system size, cost, savings & ROI.', icon: 'fas fa-sun', url: './electricity-tools/solar-panel-calculator.html' },
+            { id: 'battery-backup-calculator', title: 'Battery Backup Calculator', description: 'Calculate inverter battery capacity & backup time.', icon: 'fas fa-battery-full', url: './electricity-tools/battery-backup-calculator.html' },
+            { id: 'voltage-drop-calculator', title: 'Voltage Drop Calculator', description: 'Calculate cable voltage drop & wire size selection.', icon: 'fas fa-plug', url: './electricity-tools/voltage-drop-calculator.html' },
+            { id: 'motor-calculator', title: 'Motor Calculator', description: 'Calculate motor power, current, efficiency & torque.', icon: 'fas fa-cog', url: './electricity-tools/motor-calculator.html' },
+            { id: 'transformer-calculator', title: 'Transformer Calculator', description: 'Calculate transformer parameters & turns ratio.', icon: 'fas fa-bolt', url: './electricity-tools/transformer-calculator.html' },
+            { id: 'capacitor-bank-calculator', title: 'Capacitor Bank Calculator', description: 'Calculate power factor correction & capacitor sizing.', icon: 'fas fa-charging-station', url: './electricity-tools/capacitor-bank-calculator.html' },
+            { id: 'led-savings-calculator', title: 'LED Savings Calculator', description: 'Compare LED vs traditional bulbs - Calculate ROI.', icon: 'fas fa-lightbulb', url: './electricity-tools/led-savings-calculator.html' },
+            { id: 'generator-sizing-calculator', title: 'Generator Sizing Calculator', description: 'Calculate required generator capacity for loads.', icon: 'fas fa-engine', url: './electricity-tools/generator-sizing-calculator.html' },
+            { id: 'earthing-calculator', title: 'Earthing Calculator', description: 'Calculate earthing electrode resistance & design.', icon: 'fas fa-globe', url: './electricity-tools/earthing-calculator.html' },
+            { id: 'cable-size-calculator', title: 'Cable Size Calculator', description: 'Calculate optimal cable size based on current & load.', icon: 'fas fa-ethernet', url: './electricity-tools/cable-size-calculator.html' }
+          ],
+          travel: [
+            { id: 'fuel-cost-calculator', title: 'Fuel Cost Calculator', description: 'Estimate trip fuel cost and distance.', icon: 'fas fa-gas-pump', url: './travel-tools/fuel-cost-calculator.html' },
+            { id: 'trip-cost-calculator', title: 'Trip Cost Calculator', description: 'Plan complete trip budget with all expenses.', icon: 'fas fa-suitcase-rolling', url: './travel-tools/trip-cost-calculator.html' },
+            { id: 'distance-calculator', title: 'Distance Calculator', description: 'Calculate distance, routes & travel time.', icon: 'fas fa-route', url: './travel-tools/distance-calculator.html' },
+            { id: 'carpool-savings-calculator', title: 'Carpool Savings Calculator', description: 'Calculate carpooling savings & environmental impact.', icon: 'fas fa-users', url: './travel-tools/carpool-savings-calculator.html' },
+            { id: 'flight-cost-comparison', title: 'Flight Cost Comparison', description: 'Compare airline fares & find best deals.', icon: 'fas fa-plane', url: './travel-tools/flight-cost-comparison.html' },
+            { id: 'train-journey-planner', title: 'Train Journey Planner', description: 'Calculate Indian Railways fare for all classes.', icon: 'fas fa-train', url: './travel-tools/train-journey-planner.html' },
+            { id: 'bus-fare-calculator', title: 'Bus Fare Calculator', description: 'Calculate state transport & private bus fares.', icon: 'fas fa-bus', url: './travel-tools/bus-fare-calculator.html' },
+            { id: 'taxi-fare-calculator', title: 'Taxi & Cab Fare Calculator', description: 'Calculate Ola, Uber & auto-rickshaw fares.', icon: 'fas fa-taxi', url: './travel-tools/taxi-fare-calculator.html' },
+            { id: 'toll-tax-calculator', title: 'Toll Tax Calculator', description: 'Calculate highway toll charges for your journey.', icon: 'fas fa-road', url: './travel-tools/toll-tax-calculator.html' },
+            { id: 'vehicle-maintenance-calculator', title: 'Vehicle Maintenance Cost', description: 'Calculate annual vehicle servicing expenses.', icon: 'fas fa-tools', url: './travel-tools/vehicle-maintenance-calculator.html' },
+            { id: 'mileage-tracker', title: 'Mileage Tracker', description: 'Track fuel efficiency and calculate cost per km.', icon: 'fas fa-tachometer-alt', url: './travel-tools/mileage-tracker.html' },
+            { id: 'parking-cost-calculator', title: 'Parking Cost Calculator', description: 'Calculate parking charges for different locations.', icon: 'fas fa-parking', url: './travel-tools/parking-cost-calculator.html' },
+            { id: 'road-trip-planner', title: 'Road Trip Planner', description: 'Plan multi-city road trip with cost breakdown.', icon: 'fas fa-map-marked-alt', url: './travel-tools/road-trip-planner.html' },
+            { id: 'ev-cost-calculator', title: 'EV Cost Calculator', description: 'Calculate electric vehicle cost vs petrol/diesel.', icon: 'fas fa-charging-station', url: './travel-tools/ev-cost-calculator.html' },
+            { id: 'bike-rental-calculator', title: 'Bike/Scooter Rental', description: 'Calculate rental cost for bikes and scooters.', icon: 'fas fa-motorcycle', url: './travel-tools/bike-rental-calculator.html' }
+          ],
+          taxation: [
+            { id: 'income-tax-calculator', title: 'Income Tax Calculator', description: 'Estimate income tax liability.', icon: 'fas fa-file-invoice-dollar', url: './taxation-tools/income-tax-calculator.html' }
+          ]
+        };
+        
+        // --- NEW: Calculator Implementation Hub ---
+        // This is where you add the logic for each calculator.
+        const calculatorImplementations = {
+            'mortgage-calculator': {
+                getHTML: () => `
+                    <form class="calculator-form">
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount ($)</label>
+                            <input type="number" id="loanAmount" value="300000" placeholder="e.g., 300000">
+                        </div>
+                        <div class="form-group">
+                            <label for="interestRate">Interest Rate (%)</label>
+                            <input type="number" id="interestRate" value="6.5" step="0.01" placeholder="e.g., 6.5">
+                        </div>
+                        <div class="form-group">
+                            <label for="loanTerm">Loan Term (years)</label>
+                            <input type="number" id="loanTerm" value="30" placeholder="e.g., 30">
+                        </div>
+                        <div class="calculator-result-area">
+                            <p class="result-title">Monthly Payment</p>
+                            <p class="result-value" id="resultValue">$0.00</p>
+                            <p class="result-interpretation" id="resultInterpretation"></p>
+                        </div>
+                    </form>
+                `,
+                attachEventListeners: (modal) => {
+                    const form = modal.querySelector('form');
+                    const calculate = () => {
+                        const P = parseFloat(modal.querySelector('#loanAmount').value);
+                        const annualRate = parseFloat(modal.querySelector('#interestRate').value);
+                        const termYears = parseFloat(modal.querySelector('#loanTerm').value);
+                        
+                        if (P > 0 && annualRate > 0 && termYears > 0) {
+                            const i = annualRate / 100 / 12;
+                            const n = termYears * 12;
+                            const M = P * (i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+                            
+                            modal.querySelector('#resultValue').textContent = M.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+                            modal.querySelector('#resultInterpretation').textContent = '';
+                        } else {
+                            modal.querySelector('#resultValue').textContent = '$0.00';
+                            modal.querySelector('#resultInterpretation').textContent = 'Please enter valid loan details.';
+                        }
+                    };
+                    form.addEventListener('input', calculate);
+                    calculate(); // Initial calculation
+                }
+            },
+            'bmi-calculator': {
+                getHTML: () => `
+                    <form class="calculator-form">
+                        <div class="form-group">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" id="height" value="175" placeholder="e.g., 175">
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" value="70" placeholder="e.g., 70">
+                        </div>
+                        <div class="calculator-result-area">
+                            <p class="result-title">Your BMI</p>
+                            <p class="result-value" id="resultValue">--</p>
+                            <p class="result-interpretation" id="resultInterpretation"></p>
+                        </div>
+                    </form>
+                `,
+                attachEventListeners: (modal) => {
+                    const form = modal.querySelector('form');
+                    const calculate = () => {
+                        const heightCm = parseFloat(modal.querySelector('#height').value);
+                        const weightKg = parseFloat(modal.querySelector('#weight').value);
+
+                        if (heightCm > 0 && weightKg > 0) {
+                            const heightM = heightCm / 100;
+                            const bmi = weightKg / (heightM * heightM);
+                            
+                            let interpretation = 'Based on your BMI, you are in the ';
+                            if (bmi < 18.5) interpretation += 'Underweight range.';
+                            else if (bmi < 25) interpretation += 'Normal weight range.';
+                            else if (bmi < 30) interpretation += 'Overweight range.';
+                            else interpretation += 'Obesity range.';
+                            
+                            modal.querySelector('#resultValue').textContent = bmi.toFixed(1);
+                            modal.querySelector('#resultInterpretation').textContent = interpretation + ' This is an estimate, consult a healthcare professional for advice.';
+                        } else {
+                            modal.querySelector('#resultValue').textContent = '--';
+                            modal.querySelector('#resultInterpretation').textContent = 'Please enter a valid height and weight.';
+                        }
+                    };
+                    form.addEventListener('input', calculate);
+                    calculate();
+                }
+            },
+            'age-calculator': {
+                getHTML: () => `
+                    <form class="calculator-form">
+                        <div class="form-group">
+                            <label for="birthDate">Enter Your Date of Birth</label>
+                            <input type="date" id="birthDate" required>
+                        </div>
+                        <div class="calculator-result-area">
+                            <p class="result-title">Your Age Is</p>
+                            <p class="result-value" id="resultValue">--</p>
+                            <p class="result-interpretation" id="resultInterpretation">Enter your date of birth to calculate your age.</p>
+                        </div>
+                    </form>
+                `,
+                attachEventListeners: (modal) => {
+                    const form = modal.querySelector('form');
+                    const birthDateInput = modal.querySelector('#birthDate');
+                    
+                    // Set max date to today and a reasonable default (20 years ago)
+                    const today = new Date();
+                    const defaultDate = new Date(today.getFullYear() - 20, today.getMonth(), today.getDate());
+                    const formattedToday = today.toISOString().split('T')[0];
+                    const formattedDefault = defaultDate.toISOString().split('T')[0];
+                    
+                    birthDateInput.max = formattedToday;
+                    birthDateInput.value = formattedDefault;
+                    
+                    const calculate = () => {
+                        if (!birthDateInput.value) {
+                            modal.querySelector('#resultValue').textContent = '--';
+                            modal.querySelector('#resultInterpretation').textContent = 'Please enter your date of birth.';
+                            return;
+                        }
+
+                        const birthDate = new Date(birthDateInput.value);
+                        const currentDate = new Date();
+                        
+                        // Check if birth date is in the future
+                        if (birthDate > currentDate) {
+                            modal.querySelector('#resultValue').textContent = '--';
+                            modal.querySelector('#resultInterpretation').textContent = 'Birth date cannot be in the future.';
+                            return;
+                        }
+                        
+                        // Calculate difference
+                        let years = currentDate.getFullYear() - birthDate.getFullYear();
+                        let months = currentDate.getMonth() - birthDate.getMonth();
+                        let days = currentDate.getDate() - birthDate.getDate();
+                        
+                        // Adjust for negative days
+                        if (days < 0) {
+                            months--;
+                            // Get days in previous month
+                            const prevMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+                            days += prevMonth.getDate();
+                        }
+                        
+                        // Adjust for negative months
+                        if (months < 0) {
+                            years--;
+                            months += 12;
+                        }
+                        
+                        // Format the result
+                        const yearText = years === 1 ? 'year' : 'years';
+                        const monthText = months === 1 ? 'month' : 'months';
+                        const dayText = days === 1 ? 'day' : 'days';
+                        
+                        modal.querySelector('#resultValue').textContent = `${years} ${yearText}, ${months} ${monthText}, ${days} ${dayText}`;
+                        modal.querySelector('#resultInterpretation').textContent = `Calculated as of ${currentDate.toLocaleDateString()}`;
+                    };
+                    
+                    form.addEventListener('input', calculate);
+                    calculate(); // Initial calculation
+                }
+            },
+            'percentage-calculator': {
+                 getHTML: () => `
+                    <form class="calculator-form">
+                        <div class="form-group">
+                             <select id="calcMode">
+                                <option value="p_of_n">What is X % of Y?</option>
+                                <option value="n_is_p_of">X is what % of Y?</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="val1" id="label1">Percentage (X)</label>
+                            <input type="number" id="val1" placeholder="e.g., 15">
+                        </div>
+                        <div class="form-group">
+                            <label for="val2" id="label2">Total Number (Y)</label>
+                            <input type="number" id="val2" placeholder="e.g., 200">
+                        </div>
+                        <div class="calculator-result-area">
+                            <p class="result-title">Result</p>
+                            <p class="result-value" id="resultValue">--</p>
+                        </div>
+                    </form>
+                `,
+                attachEventListeners: (modal) => {
+                    const form = modal.querySelector('form');
+                    const modeSelect = modal.querySelector('#calcMode');
+                    const label1 = modal.querySelector('#label1');
+                    const label2 = modal.querySelector('#label2');
+
+                    const updateLabels = () => {
+                        if (modeSelect.value === 'p_of_n') {
+                            label1.textContent = 'Percentage (X)';
+                            label2.textContent = 'Total Number (Y)';
+                        } else {
+                            label1.textContent = 'Part Number (X)';
+                            label2.textContent = 'Total Number (Y)';
+                        }
+                    };
+                    
+                    const calculate = () => {
+                        const val1 = parseFloat(modal.querySelector('#val1').value);
+                        const val2 = parseFloat(modal.querySelector('#val2').value);
+                        let result = '--';
+
+                        if (!isNaN(val1) && !isNaN(val2)) {
+                            if (modeSelect.value === 'p_of_n') {
+                                result = (val1 / 100) * val2;
+                            } else if (val2 !== 0) {
+                                result = `${(val1 / val2) * 100}%`;
+                            } else {
+                                result = 'Error';
+                            }
+                        }
+                        modal.querySelector('#resultValue').textContent = result;
+                    };
+                    
+                    modeSelect.addEventListener('change', () => {
+                        updateLabels();
+                        calculate();
+                    });
+                    form.addEventListener('input', calculate);
+                    updateLabels();
+                }
+            }
+        };
+
+
+        // --- Core Application Logic (Mostly Unchanged, with additions for Modal) ---
+        let currentTheme = 'light';
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        // DOM Elements
+        const themeToggle = document.getElementById('themeToggle');
+        const searchInput = document.getElementById('searchInput');
+        const searchClear = document.getElementById('searchClear');
+        const searchSuggestions = document.getElementById('searchSuggestions');
+        const categoryTabs = document.getElementById('categoryTabs');
+  // Preserve original parent so we can restore the tabs after moving them for mobile
+  const categoryOriginalParent = categoryTabs.parentElement;
+        const toolsGrid = document.getElementById('toolsGrid');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        // NEW: Modal DOM Elements
+        const calculatorModal = document.getElementById('calculatorModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+    // Login modal elements
+    const loginModal = document.getElementById('loginModal');
+    const loginModalClose = document.getElementById('loginModalClose');
+    const loginForm = document.getElementById('loginForm');
+    const loginBtn = document.getElementById('loginBtn');
+    const mobileLoginBtn = document.getElementById('mobileLoginBtn');
+
+        document.addEventListener('DOMContentLoaded', function() {
+          initializeTheme();
+                    initializeEventListeners();
+                    updateLoginState();
+          renderTools();
+          createScrollToTopButton();
+        });
+
+        function initializeTheme() {
+          const savedTheme = localStorage.getItem('calculator-hub-theme') || 'light';
+          currentTheme = savedTheme;
+          document.documentElement.setAttribute('data-theme', currentTheme);
+          updateThemeIcon();
+        }
+
+        function toggleTheme() {
+          currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', currentTheme);
+          localStorage.setItem('calculator-hub-theme', currentTheme);
+          updateThemeIcon();
+        }
+
+        function updateThemeIcon() {
+          const icon = themeToggle.querySelector('i');
+          icon.className = currentTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+
+        function initializeEventListeners() {
+            themeToggle.addEventListener('click', toggleTheme);
+            searchInput.addEventListener('input', handleSearch);
+            searchInput.addEventListener('focus', showSearchSuggestions);
+            document.body.addEventListener('click', (e) => {
+                if (!e.target.closest('.floating-search')) {
+                    hideSearchSuggestions();
+                }
+            });
+
+            // Mobile navigation back button
+            const mobileNavBack = document.getElementById('mobileNavBack');
+            mobileNavBack?.addEventListener('click', () => {
+                toggleMobileMenu();
+            });
+            searchClear.addEventListener('click', clearSearch);
+            
+            // Navigation categories dropdown (desktop)
+            const navCategoriesBtn = document.getElementById('navCategoriesBtn');
+            const navCategoryDropdown = document.getElementById('navCategoryDropdown');
+            navCategoriesBtn?.addEventListener('click', (ev) => {
+                ev.stopPropagation();
+                const open = navCategoryDropdown.classList.toggle('open');
+                navCategoriesBtn.setAttribute('aria-expanded', open);
+            });
+            // Close dropdown when clicking outside
+            document.addEventListener('click', () => {
+                if (navCategoryDropdown) {
+                    navCategoryDropdown.classList.remove('open');
+                    navCategoriesBtn?.setAttribute('aria-expanded', 'false');
+                }
+            });
+            // Handle selecting a category from the nav dropdown
+            navCategoryDropdown?.addEventListener('click', (ev) => {
+                const item = ev.target.closest('.dropdown-item');
+                if (!item) return;
+                ev.preventDefault();
+                const cat = item.dataset.category;
+                // Update active state for desktop & mobile tabs
+                document.querySelectorAll('.tab-button.active').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll(`.tab-button[data-category="${cat}"]`).forEach(btn => btn.classList.add('active'));
+                currentCategory = cat;
+                renderTools();
+                navCategoryDropdown.classList.remove('open');
+                navCategoriesBtn?.setAttribute('aria-expanded', 'false');
+                // If mobile view is open, close it to show results
+                if (window.innerWidth <= 768) {
+                    toggleMobileMenu();
+                }
+            });
+            
+            // Initialize both desktop and mobile category tabs
+            const mobileCategoryTabs = document.getElementById('mobileCategoryTabs');
+            if (mobileCategoryTabs) {
+                // Copy category buttons to mobile menu
+                mobileCategoryTabs.innerHTML = categoryTabs.innerHTML;
+                mobileCategoryTabs.addEventListener('click', handleCategoryClick);
+            }
+            
+            categoryTabs.addEventListener('click', handleCategoryClick);
+            mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+            
+            // Mobile categories menu handlers
+            const mobileCategoriesMenu = document.getElementById('mobileCategoriesMenu');
+            const mobileCategoriesBack = document.getElementById('mobileCategoriesBack');
+            
+            // Show categories menu when clicking hamburger on mobile
+            function showMobileCategoriesMenu() {
+                if (window.innerWidth <= 768) {
+                    mobileCategoriesMenu.classList.add('active');
+                    mobileMenuOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+            
+            // Hide categories menu
+            function hideMobileCategoriesMenu() {
+                mobileCategoriesMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            // Toggle categories menu instead of nav menu on mobile
+            mobileMenuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (window.innerWidth <= 768) {
+                    showMobileCategoriesMenu();
+                }
+            });
+            
+            // Back button to close menu
+            mobileCategoriesBack?.addEventListener('click', hideMobileCategoriesMenu);
+            
+            // Mobile Search Functionality
+            const mobileSearchInput = document.getElementById('mobileSearchInput');
+            const mobileSearchClear = document.getElementById('mobileSearchClear');
+            const mobileMenuContent = document.getElementById('mobileMenuContent');
+            
+            mobileSearchInput?.addEventListener('input', (e) => {
+                const searchQuery = e.target.value.toLowerCase().trim();
+                
+                // Show/hide clear button
+                mobileSearchClear.style.display = searchQuery ? 'block' : 'none';
+                
+                if (!searchQuery) {
+                    // Show all categories
+                    displayMobileCategories();
+                    return;
+                }
+                
+                // Search through all tools
+                const allTools = Object.values(toolsData).flat();
+                const filteredTools = allTools.filter(tool => 
+                    tool.title.toLowerCase().includes(searchQuery) || 
+                    tool.description.toLowerCase().includes(searchQuery)
+                );
+                
+                if (filteredTools.length === 0) {
+                    mobileMenuContent.innerHTML = `
+                        <div style="padding: var(--space-lg); text-align: center; color: var(--text-secondary);">
+                            <i class="fas fa-search" style="font-size: 2rem; margin-bottom: 12px; display: block;"></i>
+                            <p>No tools found for "<strong>${e.target.value}</strong>"</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Display search results
+                const toolsHtml = filteredTools.map(tool => `
+                    <div class="mobile-tool-item" onclick="handleToolClick('${tool.id}')">
+                        <div class="mobile-tool-icon">
+                            <i class="${tool.icon}"></i>
+                        </div>
+                        <div class="mobile-tool-info">
+                            <h4 class="mobile-tool-title">${tool.title}</h4>
+                            <p class="mobile-tool-description">${tool.description}</p>
+                        </div>
+                        <i class="fas fa-chevron-right" style="color: var(--accent-blue); margin-left: auto;"></i>
+                    </div>
+                `).join('');
+                
+                mobileMenuContent.innerHTML = `
+                    <div style="padding: var(--space-md); font-size: 0.9rem; color: var(--text-secondary); border-bottom: 1px solid var(--glass-border);">
+                        Found ${filteredTools.length} tool${filteredTools.length !== 1 ? 's' : ''}
+                    </div>
+                    <div class="mobile-tools-list">
+                        ${toolsHtml}
+                    </div>
+                `;
+            });
+            
+            // Clear search
+            mobileSearchClear?.addEventListener('click', () => {
+                mobileSearchInput.value = '';
+                mobileSearchClear.style.display = 'none';
+                displayMobileCategories();
+                mobileSearchInput.focus();
+            });
+            
+            // Function to display categories
+            function displayMobileCategories() {
+                const categoriesHtml = `
+                    <button class="mobile-category-btn" data-category="all">
+                        <i class="fas fa-th-large"></i>
+                        All Calculators
+                    </button>
+                    <button class="mobile-category-btn" data-category="financial">
+                        <i class="fas fa-chart-line"></i>
+                        Financial
+                    </button>
+                    <button class="mobile-category-btn" data-category="health">
+                        <i class="fas fa-heartbeat"></i>
+                        Fitness &amp; Health
+                    </button>
+                    <button class="mobile-category-btn" data-category="math">
+                        <i class="fas fa-calculator"></i>
+                        Math
+                    </button>
+                    <button class="mobile-category-btn" data-category="datetime">
+                        <i class="fas fa-clock"></i>
+                        Date &amp; Time
+                    </button>
+                    <button class="mobile-category-btn" data-category="business">
+                        <i class="fas fa-briefcase"></i>
+                        Business &amp; Marketing
+                    </button>
+                    <button class="mobile-category-btn" data-category="construction">
+                        <i class="fas fa-hard-hat"></i>
+                        Construction &amp; Engineering
+                    </button>
+                    <button class="mobile-category-btn" data-category="electricity">
+                        <i class="fas fa-bolt"></i>
+                        Electricity &amp; Energy
+                    </button>
+                    <button class="mobile-category-btn" data-category="travel">
+                        <i class="fas fa-plane"></i>
+                        Travel &amp; Transport
+                    </button>
+                    <button class="mobile-category-btn" data-category="taxation">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        Taxation &amp; Accounting
+                    </button>
+                `;
+                
+                mobileMenuContent.innerHTML = categoriesHtml;
+                
+                // Re-attach category click listeners
+                document.querySelectorAll('.mobile-category-btn').forEach(btn => {
+                    btn.addEventListener('click', handleMobileCategoryClick);
+                });
+            }
+            
+            function handleMobileCategoryClick(e) {
+                const btn = e.currentTarget;
+                const cat = btn.dataset.category;
+                
+                // Get tools for this category
+                const tools = (cat === 'all') 
+                    ? Object.values(toolsData).flat() 
+                    : (toolsData[cat] || []);
+                
+                // Hide category buttons
+                document.querySelectorAll('.mobile-category-btn').forEach(b => b.style.display = 'none');
+                
+                // Clear search
+                mobileSearchInput.value = '';
+                mobileSearchClear.style.display = 'none';
+                
+                // Show tools list
+                const toolsHtml = tools.map(tool => `
+                    <div class="mobile-tool-item" onclick="handleToolClick('${tool.id}')">
+                        <div class="mobile-tool-icon">
+                            <i class="${tool.icon}"></i>
+                        </div>
+                        <div class="mobile-tool-info">
+                            <h4 class="mobile-tool-title">${tool.title}</h4>
+                            <p class="mobile-tool-description">${tool.description}</p>
+                        </div>
+                        <i class="fas fa-chevron-right" style="color: var(--accent-blue); margin-left: auto;"></i>
+                    </div>
+                `).join('');
+                
+                mobileMenuContent.innerHTML = `
+                    <div class="mobile-menu-tools-header">
+                        <button class="mobile-menu-back-btn" id="mobileToolsBack">
+                            <i class="fas fa-arrow-left"></i> Back to Categories
+                        </button>
+                    </div>
+                    <div class="mobile-tools-list">
+                        ${toolsHtml}
+                    </div>
+                `;
+                
+                // Handle back to categories
+                document.getElementById('mobileToolsBack')?.addEventListener('click', displayMobileCategories);
+            }
+            
+            // Initialize categories on first load
+            displayMobileCategories();
+            
+            // Close when clicking overlay
+            mobileMenuOverlay.addEventListener('click', hideMobileCategoriesMenu);
+            
+            // Handle category selection from mobile menu - show tools instead of closing
+            document.querySelectorAll('.mobile-category-btn').forEach(btn => {
+                btn.addEventListener('click', handleMobileCategoryClick);
+            });
+            
+            document.querySelectorAll('.nav-link, .hero-cta-button').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                        if(navMenu.classList.contains('active')) {
+                            toggleMobileMenu();
+                        }
+                    }
+                });
+            });
+          
+          // NEW: Modal Listeners
+          modalCloseBtn.addEventListener('click', closeModal);
+          calculatorModal.addEventListener('click', (e) => {
+              if (e.target === calculatorModal) closeModal();
+          });
+          document.addEventListener('keydown', (e) => {
+              if (e.key === "Escape" && calculatorModal.classList.contains('visible')) {
+                  closeModal();
+              }
+          });
+          // Login modal listeners (desktop + mobile)
+          const handleLoginClick = (ev) => {
+              ev.stopPropagation();
+              const stored = localStorage.getItem('calculator-user-email');
+              if (stored) {
+                  // simple logout flow
+                  if (confirm('Sign out from ' + stored + '?')) {
+                      logout();
+                  }
+              } else {
+                  showLoginModal();
+              }
+          };
+          loginBtn?.addEventListener('click', handleLoginClick);
+          mobileLoginBtn?.addEventListener('click', handleLoginClick);
+          
+          loginModalClose?.addEventListener('click', closeLoginModal);
+          loginModal?.addEventListener('click', (e) => {
+              if (e.target === loginModal) closeLoginModal();
+          });
+          loginForm?.addEventListener('submit', (e) => {
+              e.preventDefault();
+              handleLoginSubmit();
+          });
+          document.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape' && loginModal?.classList.contains('visible')) {
+                  closeLoginModal();
+              }
+          });
+        }
+        
+        // --- MODIFIED & NEW FUNCTIONS for Modal ---
+        function handleToolClick(toolId) {
+            // Get the tool from all categories
+            const allTools = Object.values(toolsData).flat();
+            const tool = allTools.find(t => t.id === toolId);
+            
+            if (!tool) {
+                alert('Tool not found');
+                return;
+            }
+            
+            // If tool has a URL (separate HTML file), navigate to it
+            if (tool.url) {
+                window.location.href = tool.url;
+                return;
+            }
+            
+            // If tool has modal implementation, show modal
+            const implementation = calculatorImplementations[toolId];
+            if (implementation) {
+                showCalculatorModal(toolId);
+            } else {
+                // Fallback for not-yet-implemented calculators
+                alert(`The "${tool.title}" is coming soon! We're working on it.`);
+            }
+        }
+        
+        function showCalculatorModal(toolId) {
+            const allTools = Object.values(toolsData).flat();
+            const tool = allTools.find(t => t.id === toolId);
+            const implementation = calculatorImplementations[toolId];
+            
+            modalTitle.textContent = tool.title;
+            modalBody.innerHTML = implementation.getHTML();
+            implementation.attachEventListeners(calculatorModal);
+            
+            calculatorModal.classList.add('visible');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+
+        function closeModal() {
+            calculatorModal.classList.remove('visible');
+            document.body.style.overflow = '';
+            modalBody.innerHTML = ''; // Clear content
+        }
+        
+        // --- Login modal helpers ---
+        function showLoginModal() {
+            loginModal.classList.add('visible');
+            document.body.style.overflow = 'hidden';
+            // focus email after small timeout so modal is fully visible
+            setTimeout(() => document.getElementById('loginEmail')?.focus(), 120);
+        }
+
+        function closeLoginModal() {
+            loginModal.classList.remove('visible');
+            document.body.style.overflow = '';
+            // clear form
+            loginForm?.reset();
+        }
+
+        function handleLoginSubmit() {
+            const email = (document.getElementById('loginEmail') || {}).value || '';
+            // Basic client-side validation
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email.');
+                return;
+            }
+            // Persist a simple logged-in flag (for demo purposes only)
+            localStorage.setItem('calculator-user-email', email);
+            updateLoginState();
+            closeLoginModal();
+            alert('Signed in as ' + email);
+        }
+
+        function updateLoginState() {
+            const email = localStorage.getItem('calculator-user-email');
+            if (email) {
+                const short = email.split('@')[0];
+                if (loginBtn) {
+                    loginBtn.innerHTML = `<i class="fas fa-user-check"></i> ${short}`;
+                    loginBtn.dataset.logged = 'true';
+                }
+                if (mobileLoginBtn) {
+                    mobileLoginBtn.innerHTML = `<i class="fas fa-user-check"></i><span>${short}</span>`;
+                    mobileLoginBtn.dataset.logged = 'true';
+                }
+            } else {
+                if (loginBtn) {
+                    loginBtn.innerHTML = '<i class="fas fa-user"></i> Login';
+                    delete loginBtn.dataset.logged;
+                }
+                if (mobileLoginBtn) {
+                    mobileLoginBtn.innerHTML = '<i class="fas fa-user"></i><span>Login</span>';
+                    delete mobileLoginBtn.dataset.logged;
+                }
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('calculator-user-email');
+            updateLoginState();
+        }
+        
+        // --- UNCHANGED FUNCTIONS ---
+        function handleSearch(e) {
+          searchQuery = e.target.value.toLowerCase();
+          searchClear.classList.toggle('visible', searchQuery.length > 0);
+          showSearchSuggestions();
+          renderTools();
+        }
+        function clearSearch() {
+          searchInput.value = '';
+          searchInput.dispatchEvent(new Event('input'));
+        }
+        function showSearchSuggestions() {
+          if (searchQuery.length === 0) { hideSearchSuggestions(); return; }
+          const suggestions = generateSearchSuggestions();
+          if (suggestions.length > 0) {
+            renderSearchSuggestions(suggestions);
+            searchSuggestions.classList.add('visible');
+          } else {
+            hideSearchSuggestions();
+          }
+        }
+        function hideSearchSuggestions() { searchSuggestions.classList.remove('visible'); }
+        function generateSearchSuggestions() {
+          const allTools = Object.values(toolsData).flat();
+          return allTools.filter(tool => tool.title.toLowerCase().includes(searchQuery) || tool.description.toLowerCase().includes(searchQuery)).slice(0, 5);
+        }
+        function renderSearchSuggestions(suggestions) {
+          searchSuggestions.innerHTML = suggestions.map(tool => `
+              <div class="suggestion-item" data-id="${tool.id}" onmousedown="selectTool('${tool.id}')">
+                <i class="${tool.icon}"></i>
+                <span>${tool.title}</span>
+              </div>`).join('');
+        }
+        function selectTool(toolId) {
+          const allTools = Object.values(toolsData).flat();
+          const tool = allTools.find(t => t.id === toolId);
+          if (tool) {
+            searchInput.value = tool.title;
+            searchQuery = tool.title.toLowerCase();
+            hideSearchSuggestions();
+            renderTools();
+          }
+        }
+        function handleCategoryClick(e) {
+            const button = e.target.closest('.tab-button');
+            if (!button) return;
+            
+            // Update active state for both desktop and mobile tabs
+            document.querySelectorAll('.tab-button.active').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll(`.tab-button[data-category="${button.dataset.category}"]`).forEach(btn => btn.classList.add('active'));
+            currentCategory = button.dataset.category;
+            
+            if (window.innerWidth <= 768) {
+                // On mobile, render tools in the mobile menu
+                const tools = getFilteredTools();
+                const mobileToolsContainer = document.getElementById('mobileMenuTools');
+                
+                mobileToolsContainer.innerHTML = tools.map(tool => `
+                    <div class="tool-card" data-category="${currentCategory}" onclick="handleToolClick('${tool.id}')">
+                        <div class="tool-header">
+                            <div class="tool-icon"><i class="${tool.icon}"></i></div>
+                            <div class="tool-content">
+                                <h3 class="tool-title">${tool.title}</h3>
+                                <p class="tool-description">${tool.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                mobileToolsContainer.classList.add('vi sible');
+            }
+            
+            // Always render in main content for both mobile and desktop
+            renderTools();
+        }
+        function renderTools() {
+          const filteredTools = getFilteredTools();
+          if (filteredTools.length === 0) {
+            toolsGrid.innerHTML = `<div class="no-results"><i class="fas fa-search"></i><h3>No calculators found</h3><p>Try adjusting your search or category filter.</p></div>`;
+            return;
+          }
+          toolsGrid.innerHTML = filteredTools.map(tool => createToolCard(tool)).join('');
+          observeToolCards();
+        }
+        function getFilteredTools() {
+          let tools = (currentCategory === 'all') ? Object.values(toolsData).flat() : (toolsData[currentCategory] || []);
+          if (searchQuery) {
+            tools = tools.filter(tool => tool.title.toLowerCase().includes(searchQuery) || tool.description.toLowerCase().includes(searchQuery));
+          }
+          return tools;
+        }
+        function createToolCard(tool) {
+          const categoryName = getCategoryName(tool);
+          return `
+            <div class="tool-card" data-category="${categoryName.toLowerCase()}" onclick="handleToolClick('${tool.id}')">
+              <div class="tool-header">
+                <div class="tool-icon"><i class="${tool.icon}"></i></div>
+                <h3 class="tool-title">${tool.title}</h3>
+              </div>
+              <div class="tool-content"><p class="tool-description">${tool.description}</p></div>
+              <button class="tool-action">${tool.action}</button>
+            </div>`;
+        }
+        function getCategoryName(tool) {
+          for (const [category, tools] of Object.entries(toolsData)) {
+            if (tools.some(t => t.id === tool.id)) return category.charAt(0).toUpperCase() + category.slice(1);
+          }
+          return 'Tool';
+        }
+        function toggleMobileMenu() {
+            navMenu.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+            document.getElementById('mobileCategoryTabs')?.classList.toggle('mobile-active');
+            mobileMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileCategoryTabs')?.classList.contains('mobile-active') ? 'hidden' : '';
+            
+            // Show/hide back button
+            const mobileNavBack = document.getElementById('mobileNavBack');
+            if (document.getElementById('mobileCategoryTabs')?.classList.contains('mobile-active')) {
+                mobileNavBack?.classList.add('visible');
+            } else {
+                mobileNavBack?.classList.remove('visible');
+                document.getElementById('mobileMenuTools')?.classList.remove('visible');
+            }
+
+            // When opening menu, trigger click on currently active category
+            if (document.getElementById('mobileCategoryTabs')?.classList.contains('mobile-active')) {
+                const activeCategory = currentCategory || 'all';
+                const activeButton = document.querySelector(`#mobileCategoryTabs .tab-button[data-category="${activeCategory}"]`);
+                if (activeButton) {
+                    activeButton.click();
+                }
+            }
+        }
+
+        // Close mobile menu when clicking overlay or close button
+        mobileMenuOverlay.addEventListener('click', () => {
+          if (categoryTabs.classList.contains('mobile-active')) {
+            toggleMobileMenu();
+          }
+        });
+
+        document.getElementById('mobileMenuClose').addEventListener('click', () => {
+          if (categoryTabs.classList.contains('mobile-active')) {
+            toggleMobileMenu();
+          }
+        });
+
+        // Handle search button click
+        document.getElementById('searchAction').addEventListener('click', () => {
+          const query = searchInput.value.trim();
+          if (query) {
+            handleSearch({ target: searchInput }); // Reuse existing search handler
+          }
+        });
+        function createScrollToTopButton() {
+            if(document.getElementById('scrollToTop')) return;
+            const button = document.createElement('button');
+            button.id = 'scrollToTop';
+            button.className = 'scroll-to-top';
+            button.innerHTML = '<i class="fas fa-arrow-up"></i>';
+            button.style.display = 'none';
+            button.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.body.appendChild(button);
+            window.addEventListener('scroll', () => {
+                button.style.display = (window.pageYOffset > 300) ? 'flex' : 'none';
+            });
+        }
+        function observeToolCards() {
+          const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+          document.querySelectorAll('.tool-card:not(.visible)').forEach(card => {
+            observer.observe(card);
+          });
+        }
+    </script>
+</body>
+</html>
