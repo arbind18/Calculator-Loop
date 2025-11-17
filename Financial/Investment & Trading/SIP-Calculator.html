@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SIP Calculator for financial planning">
+    <meta name="keywords" content="SIP, Systematic Investment Plan, Investment Calculator, Finance">
+    <meta name="author" content="arbind18">
+    <title>SIP Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>SIP Calculator</h1>
+        <a href="../../calculatorlooop.html"><i class="fas fa-home"></i> Back to Home</a>
+        <form id="sipCalcForm">
+            <label for="monthlyInvestment">Monthly Investment Amount (₹)</label>
+            <input type="number" id="monthlyInvestment" required>
+
+            <label for="annualReturn">Expected Annual Return Rate (%)</label>
+            <input type="number" id="annualReturn" required>
+
+            <label for="investmentPeriod">Investment Period (Years)</label>
+            <input type="number" id="investmentPeriod" required>
+
+            <label for="stepUp">Step-Up Percentage (Optional)</label>
+            <input type="number" id="stepUp" placeholder="Enter percentage"> 
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        <div class="results">
+            <h2>Results</h2>
+            <p id="totalInvestment">Total Investment: ₹0</p>
+            <p id="expectedReturns">Expected Returns: ₹0</p>
+            <p id="maturityValue">Maturity Value: ₹0</p>
+            <canvas id="growthChart"></canvas>
+        </div>
+        <table id="breakdownTable">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Total Investment (₹)</th>
+                    <th>Expected Returns (₹)</th>
+                    <th>Maturity Value (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Yearly breakdown will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('sipCalcForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const P = parseFloat(document.getElementById('monthlyInvestment').value);
+            const annualRate = parseFloat(document.getElementById('annualReturn').value);
+            const years = parseInt(document.getElementById('investmentPeriod').value);
+            const stepUpPercentage = parseFloat(document.getElementById('stepUp').value) || 0;
+
+            const i = (annualRate / 100) / 12;
+            let M = 0;
+            let totalInvestment = 0;
+            let expectedReturns = 0;
+            let yearlyData = [];
+
+            for (let year = 1; year <= years; year++) {
+                let yearlyInvestment = P * 12;
+                for (let month = 1; month <= 12; month++) {
+                    M += P * (Math.pow(1 + i, year * 12 - month));
+                }
+
+                totalInvestment += yearlyInvestment;
+                expectedReturns = M - totalInvestment;
+                yearlyData.push({ year, totalInvestment, expectedReturns, M });
+                P += (P * stepUpPercentage / 100);
+            }
+
+            updateResults(totalInvestment, expectedReturns, M);
+            updateBreakdownTable(yearlyData);
+            generateChart(yearlyData);
+        });
+
+        function updateResults(totalInvestment, expectedReturns, M) {
+            document.getElementById('totalInvestment').innerText = `Total Investment: ₹${totalInvestment.toFixed(2)}`;
+            document.getElementById('expectedReturns').innerText = `Expected Returns: ₹${expectedReturns.toFixed(2)}`;
+            document.getElementById('maturityValue').innerText = `Maturity Value: ₹${M.toFixed(2)}`;
+        }
+
+        function updateBreakdownTable(yearlyData) {
+            const tableBody = document.getElementById('breakdownTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = '';
+            yearlyData.forEach(data => {
+                const newRow = tableBody.insertRow();
+                newRow.innerHTML = `<td>${data.year}</td><td>₹${data.totalInvestment.toFixed(2)}</td><td>₹${data.expectedReturns.toFixed(2)}</td><td>₹${data.M.toFixed(2)}</td>`;
+            });
+        }
+
+        function generateChart(yearlyData) {
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            const labels = yearlyData.map(data => data.year);
+            const investmentValues = yearlyData.map(data => data.M);
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Maturity Value (₹)',
+                        data: investmentValues,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        fill: false
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Amount (₹)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #ff4081;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e91e63;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid white;
+        }
+    </style>
+</body>
+</html>
