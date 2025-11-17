@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermittent Fasting Timer</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        .timer { font-size: 2em; margin: 20px 0; }
+        .methods { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Intermittent Fasting Timer</h1>
+        <div class="methods">
+            <h2>Fasting Methods</h2>
+            <ul>
+                <li>16:8 Method</li>
+                <li>18:6 Method</li>
+                <li>20:4 Method</li>
+            </ul>
+        </div>
+        <h2>Eating Window Calculator</h2>
+        <label for="start-time">Select Start Time:</label>
+        <input type="time" id="start-time"><br><br>
+        <label for="duration">Select Fasting Duration:</label>
+        <select id="duration">
+            <option value="16">16 hours</option>
+            <option value="18">18 hours</option>
+            <option value="20">20 hours</option>
+        </select>
+        <button onclick="calculateEndTime()">Calculate Eating Window End Time</button>
+        <div id="end-time-display"></div>
+
+        <div class="timer" id="timer">00:00:00</div>
+        <button onclick="startTimer()">Start Timer</button>
+        <button onclick="stopTimer()">Stop Timer</button>
+        <button onclick="resetTimer()">Reset Timer</button>
+        <div id="start-end-display"></div>
+    </div>
+    <script>
+        let timer;
+        let duration = 0;
+        let totalSeconds = 0;
+
+        function calculateEndTime() {
+            const startTime = document.getElementById('start-time').value;
+            duration = parseInt(document.getElementById('duration').value);
+            const startDateTime = new Date(`1970-01-01T${startTime}:00Z`);
+            const endDateTime = new Date(startDateTime.getTime() + duration * 60 * 60 * 1000);
+            document.getElementById('end-time-display').innerText = `Eating Window Ends At: ${endDateTime.toUTCString().substring(0, 25)}`;
+        }
+
+        function startTimer() {
+            const startTime = document.getElementById('start-time').value;
+            const startDateTime = new Date(`1970-01-01T${startTime}:00Z`);
+            const endTime = new Date(startDateTime.getTime() + duration * 60 * 60 * 1000);
+            totalSeconds = Math.floor((endTime - new Date()) / 1000);
+
+            if (totalSeconds < 0) return;
+
+            timer = setInterval(updateTimer, 1000);
+            document.getElementById('start-end-display').innerText = `Fasting Starts At: ${startDateTime.toUTCString().substring(0, 25)} and Ends At: ${endTime.toUTCString().substring(0, 25)}`;
+        }
+
+        function updateTimer() {
+            if (totalSeconds <= 0) {
+                clearInterval(timer);
+                return;
+            }
+            totalSeconds--;
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            document.getElementById('timer').innerText = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            document.getElementById('timer').innerText = '00:00:00';
+        }
+    </script>
+</body>
+</html>
