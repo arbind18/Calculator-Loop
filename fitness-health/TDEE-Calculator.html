@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDEE Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #FF7EAD, #E25B96);
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: calc(100% - 22px);
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+    <script>
+        function calculateTDEE() {
+            // Calculation logic here
+            // Input validation here
+            // Display result
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-calculator"></i> TDEE Calculator</h1>
+        <input type="number" id="weight" placeholder="Weight (kg)" required>
+        <!-- Additional input fields -->
+        <button onclick="calculateTDEE()">Calculate TDEE</button>
+        <div class="result" id="result"></div>
+        <a href="calculatorlooop.html">Back to Calculator Loop</a>
+    </div>
+</body>
+</html>
