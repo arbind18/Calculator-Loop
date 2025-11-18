@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideal Weight Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #A8E6CF, #56CCF2);
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { text-align: center; margin-bottom: 30px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 8px; }
+        button { width: 100%; padding: 15px; background: #56CCF2; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 20px; }
+        button:hover { background: #3BB2E0; }
+        .result { margin-top: 20px; padding: 20px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; display: none; }
+        .result h3 { margin-bottom: 15px; }
+        .result p { margin: 10px 0; font-size: 18px; }
+        a { color: white; text-decoration: none; display: block; text-align: center; margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-balance-scale"></i> Ideal Weight Calculator</h1>
+        <label>Gender:</label>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <label>Height (cm):</label>
+        <input type="number" id="height" placeholder="Enter height in cm">
+        <button onclick="calculateIdealWeight()"><i class="fas fa-calculator"></i> Calculate Ideal Weight</button>
+        <div class="result" id="result"></div>
+        <a href="../calculatorlooop.html"><i class="fas fa-home"></i> Back to Calculator Loop</a>
+    </div>
+    <script>
+        function calculateIdealWeight() {
+            const gender = document.getElementById('gender').value;
+            const height = parseFloat(document.getElementById('height').value);
+            
+            if (!height || height < 100 || height > 250) {
+                alert('Please enter a valid height between 100-250 cm');
+                return;
+            }
+
+            const heightInInches = height / 2.54;
+            
+            let robinson = gender === 'male' ? 52 + 1.9 * (heightInInches - 60) : 49 + 1.7 * (heightInInches - 60);
+            let miller = gender === 'male' ? 56.2 + 1.41 * (heightInInches - 60) : 53.1 + 1.36 * (heightInInches - 60);
+            let devine = gender === 'male' ? 50 + 2.3 * (heightInInches - 60) : 45.5 + 2.3 * (heightInInches - 60);
+            let hamwi = gender === 'male' ? 48 + 2.7 * (heightInInches - 60) : 45.5 + 2.2 * (heightInInches - 60);
+
+            const average = (robinson + miller + devine + hamwi) / 4;
+
+            document.getElementById('result').innerHTML = '<h3>Ideal Weight Results:</h3><p><strong>Robinson:</strong> ' + robinson.toFixed(1) + ' kg</p><p><strong>Miller:</strong> ' + miller.toFixed(1) + ' kg</p><p><strong>Devine:</strong> ' + devine.toFixed(1) + ' kg</p><p><strong>Hamwi:</strong> ' + hamwi.toFixed(1) + ' kg</p><hr style="border: 1px solid rgba(255,255,255,0.3); margin: 15px 0;"><p style="font-size: 22px;"><strong>Average:</strong> ' + average.toFixed(1) + ' kg</p>';
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
