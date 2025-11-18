@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Fat Percentage Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #F093FB, #F5576C);
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { text-align: center; margin-bottom: 20px; }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 8px; }
+        button { width: 100%; padding: 15px; background: #F5576C; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #E04557; }
+        .result { margin-top: 20px; padding: 20px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; text-align: center; font-size: 20px; display: none; }
+        a { color: white; text-decoration: none; display: block; text-align: center; margin-top: 20px; }
+        #hipField { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-user"></i> Body Fat Percentage Calculator</h1>
+        <label>Gender:</label>
+        <select id="gender" onchange="toggleHipField()">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <label>Height (cm):</label>
+        <input type="number" id="height" placeholder="Enter height">
+        <label>Neck Circumference (cm):</label>
+        <input type="number" id="neck" placeholder="Enter neck circumference">
+        <label>Waist Circumference (cm):</label>
+        <input type="number" id="waist" placeholder="Enter waist circumference">
+        <div id="hipField">
+            <label>Hip Circumference (cm):</label>
+            <input type="number" id="hip" placeholder="Enter hip circumference">
+        </div>
+        <button onclick="calculateBodyFat()"><i class="fas fa-calculator"></i> Calculate Body Fat</button>
+        <div class="result" id="result"></div>
+        <a href="../calculatorlooop.html"><i class="fas fa-home"></i> Back to Calculator Loop</a>
+    </div>
+    <script>
+        function toggleHipField() {
+            const gender = document.getElementById('gender').value;
+            document.getElementById('hipField').style.display = gender === 'female' ? 'block' : 'none';
+        }
+
+        function calculateBodyFat() {
+            const gender = document.getElementById('gender').value;
+            const height = parseFloat(document.getElementById('height').value);
+            const neck = parseFloat(document.getElementById('neck').value);
+            const waist = parseFloat(document.getElementById('waist').value);
+            
+            if (!height || !neck || !waist) {
+                alert('Please fill all required fields');
+                return;
+            }
+
+            let bodyFat;
+            if (gender === 'male') {
+                bodyFat = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+            } else {
+                const hip = parseFloat(document.getElementById('hip').value);
+                if (!hip) {
+                    alert('Please enter hip measurement');
+                    return;
+                }
+                bodyFat = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+            }
+
+            let category;
+            if (gender === 'male') {
+                if (bodyFat < 6) category = 'Essential Fat';
+                else if (bodyFat < 14) category = 'Athletes';
+                else if (bodyFat < 18) category = 'Fitness';
+                else if (bodyFat < 25) category = 'Average';
+                else category = 'Obese';
+            } else {
+                if (bodyFat < 14) category = 'Essential Fat';
+                else if (bodyFat < 21) category = 'Athletes';
+                else if (bodyFat < 25) category = 'Fitness';
+                else if (bodyFat < 32) category = 'Average';
+                else category = 'Obese';
+            }
+
+            document.getElementById('result').innerHTML = '<strong>Body Fat: ' + bodyFat.toFixed(1) + '%</strong><br>Category: ' + category;
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
