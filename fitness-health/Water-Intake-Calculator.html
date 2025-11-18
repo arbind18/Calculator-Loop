@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Intake Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #4FACFE, #00F2FE);
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+        }
+        h1 { text-align: center; margin-bottom: 30px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 8px; }
+        button { width: 100%; padding: 15px; background: #00F2FE; color: white; border: none; border-radius: 8px; cursor: pointer; }
+        .result { margin-top: 20px; padding: 20px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; text-align: center; display: none; }
+        a { color: white; text-decoration: none; display: block; text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-tint"></i> Water Intake Calculator</h1>
+        <label>Weight (kg):</label>
+        <input type="number" id="weight" placeholder="Enter weight">
+        <label>Activity Level:</label>
+        <select id="activity">
+            <option value="1.0">Sedentary</option>
+            <option value="1.2">Lightly Active</option>
+            <option value="1.4">Moderately Active</option>
+            <option value="1.6">Very Active</option>
+            <option value="1.8">Extremely Active</option>
+        </select>
+        <label>Climate:</label>
+        <select id="climate">
+            <option value="1.0">Normal</option>
+            <option value="1.2">Hot/Humid</option>
+        </select>
+        <button onclick="calculateWater()"><i class="fas fa-calculator"></i> Calculate</button>
+        <div class="result" id="result"></div>
+        <a href="../calculatorlooop.html"><i class="fas fa-home"></i> Back</a>
+    </div>
+    <script>
+        function calculateWater() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const activity = parseFloat(document.getElementById('activity').value);
+            const climate = parseFloat(document.getElementById('climate').value);
+            if (!weight) { alert('Enter weight'); return; }
+            let waterIntake = weight * 0.033 * activity * climate;
+            const glasses = (waterIntake * 1000 / 250).toFixed(1);
+            document.getElementById('result').innerHTML = '<strong>' + waterIntake.toFixed(2) + ' Liters/day</strong><br>≈ ' + glasses + ' glasses';
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
